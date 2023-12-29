@@ -1,0 +1,7 @@
+book_filename: "TimeSeriesAnalysis"
+language:
+  ui:
+    chapter_name: "Chương "
+delete_merged_file: true
+rmd_subdir: ["posts"]
+output_dir: "docs"

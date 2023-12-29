@@ -1,0 +1,11 @@
+--- 
+title: "Python for Data Analyst 2023"
+author: "Lê Huỳnh Đức"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+description: "Python for Data Analyst 2023"
+---
+
+# Lời nói đầu {-}

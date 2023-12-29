@@ -1,0 +1,44 @@
+# Tuần 2: Lập trình với ngôn ngữ Python
+## Nội dung buổi học
+- Giới thiệu các biến trong Python​
+
+- Các kiểu dữ liệu cơ bản: float, int, str, bool​
+
+- Chuyển đổi dữ liệu​
+
+- Cấu trúc dữ liệu cơ bản: List, set, tuple, dictionary​
+
+- Toán tử số học, toán tử so sánh, toán tử logic​
+
+- Các phương thức trên string​
+
+- Các phương thức cho dữ liệu Datetime​
+
+- Câu lệnh có điều kiện​
+
+- Vòng lặp trong python​
+
+- Function​
+
+- Comment trong python
+
+## Khai báo biến
+
+### Biến là gì
+Biến là vị trí bộ nhớ được dành riêng để lưu trữ dữ liệu. \
+Một khi biến đã được lưu trữ, nghĩa là một khoảng không gian đã được cấp phát trong bộ nhớ đó. \
+Dựa trên kiểu dữ liệu của một biến, trình thông dịch cấp phát bộ nhớ và quyết định những gì có thể được lưu trữ trong khu nhớ dành riêng đó.\
+Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn có thể lưu trữ số nguyên, văn bản, số thập phân cho biến\
+![](images/week2/variable.png)
+
+Để khai báo biến trong Python, ta dùng cú pháp​
+
+`tenbien = giá trị`
+
+```python
+name = "Phạm Xuân Bách"
+```
+
+Để in giá trị của biến ra màn hình, ta dùng cú pháp
+
+`print(tenbien)`
