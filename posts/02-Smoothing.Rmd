@@ -39,6 +39,12 @@ Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn
 name = "Phạm Xuân Bách"
 ```
 
-Để in giá trị của biến ra màn hình, ta dùng cú pháp
+Để in giá trị của biến ra màn hình, ta dùng cú pháp `print(tenbien)`
 
-`print(tenbien)`
+```python
+print(name)
+```
+
+```output
+Phạm Xuân Bách
+```
