@@ -31,9 +31,7 @@ Dựa trên kiểu dữ liệu của một biến, trình thông dịch cấp ph
 Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn có thể lưu trữ số nguyên, văn bản, số thập phân cho biến\
 ![](images/week2/variable.png)
 
-Để khai báo biến trong Python, ta dùng cú pháp​
-
-`tenbien = giá trị`
+Để khai báo biến trong Python, ta dùng cú pháp​ `tenbien = giá trị`
 
 ```python
 name = "Phạm Xuân Bách"
