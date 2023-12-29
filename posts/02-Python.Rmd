@@ -1,4 +1,4 @@
-# Tuần 2: Lập trình với ngôn ngữ Python
+# Lập trình với ngôn ngữ Python
 ## Nội dung buổi học
 - Giới thiệu các biến trong Python​
 
@@ -43,6 +43,6 @@ name = "Phạm Xuân Bách"
 print(name)
 ```
 
-```code_output
+```{block, type='code_output'}
 Phạm Xuân Bách
 ```

@@ -1,5 +1,5 @@
 giơi-thiêu-python-va-cac-công-cu-hô-trơ
-tuần-2-lập-trình-với-ngôn-ngữ-python
+lập-trình-với-ngôn-ngữ-python
 nội-dung-buổi-học
 khai-báo-biến
 biến-là-gì
