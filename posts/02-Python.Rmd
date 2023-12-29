@@ -43,6 +43,6 @@ name = "Phạm Xuân Bách"
 print(name)
 ```
 
-```output
+```code_output
 Phạm Xuân Bách
 ```
