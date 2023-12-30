@@ -124,7 +124,7 @@ Cell In[10], line 1
 SyntaxError: invalid decimal literal
 ```
 
-#Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên
+Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên
 
 ```python
 name1 = "Phạm Xuân Bách"
