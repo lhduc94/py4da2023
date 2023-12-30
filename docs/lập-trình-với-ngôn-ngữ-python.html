@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023</title>
   <meta name="description" content="Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2023-12-29" />
+<meta name="date" content="2023-12-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -150,6 +150,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#khai-báo-biến"><i class="fa fa-check"></i><b>2.2</b> Khai báo biến</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#biến-là-gì"><i class="fa fa-check"></i><b>2.2.1</b> Biến là gì</a></li>
+<li class="chapter" data-level="2.2.2" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#tại-sao-phải-cần-khai-báo-biến"><i class="fa fa-check"></i><b>2.2.2</b> Tại sao phải cần khai báo biến</a></li>
+<li class="chapter" data-level="2.2.3" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#các-quy-tắc-khi-đặt-biến-trong-python"><i class="fa fa-check"></i><b>2.2.3</b> Các quy tắc khi đặt biến trong Python</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -203,11 +205,49 @@ Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb1-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Phạm Xuân Bách&quot;</span></span></code></pre></div>
 <p>Để in giá trị của biến ra màn hình, ta dùng cú pháp <code>print(tenbien)</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb2-1" tabindex="-1"></a><span class="bu">print</span>(name)</span></code></pre></div>
-<div class="code_output">
-<p>
-Phạm Xuân Bách
-</p>
+<pre><code>Phạm Xuân Bách</code></pre>
 </div>
+<div id="tại-sao-phải-cần-khai-báo-biến" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Tại sao phải cần khai báo biến<a href="lập-trình-với-ngôn-ngữ-python.html#tại-sao-phải-cần-khai-báo-biến" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hãy tưởng tượng như sau, bạn có một số dữ liệu là những con số với nhiều chữ số và các thao tác tính toán</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb4-1" tabindex="-1"></a><span class="dv">52348252408</span> <span class="op">+</span> <span class="dv">523482034</span></span></code></pre></div>
+<pre><code>52871734442</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb6-1" tabindex="-1"></a><span class="dv">52348252408</span> <span class="op">+</span> <span class="dv">12312454534534</span></span></code></pre></div>
+<pre><code>12364802786942</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb8-1" tabindex="-1"></a><span class="dv">523482034</span> <span class="op">+</span> <span class="dv">12312454534534</span></span></code></pre></div>
+<pre><code>12312978016568</code></pre>
+<p>Một điều mà các bạn dễ dàng nhận ra đó là những con số với nhiều chữ số gây khó khăn trong việc sử dụng vì chúng có quá nhiều chữ số, đôi lúc chúng ta cũng có thể vô tình gây sai lệnh giá trị. Do đó ta cần đặt các biến lưu trữ các giá trị để có thể sử dụng lại. Đồng thời khi ta thay đổi giá trị của biến, các phép tính liên quan đến biến đó cũng thay đổi giá trị theo.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb10-1" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">52348252408</span></span>
+<span id="cb10-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb10-2" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">523482034</span></span>
+<span id="cb10-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb10-3" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">12312454534534</span></span>
+<span id="cb10-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb10-4" tabindex="-1"></a>a <span class="op">+</span> b</span></code></pre></div>
+<pre><code>52871734442</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb12-1" tabindex="-1"></a>a <span class="op">+</span> c</span></code></pre></div>
+<pre><code>12364802786942</code></pre>
+</div>
+<div id="các-quy-tắc-khi-đặt-biến-trong-python" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Các quy tắc khi đặt biến trong Python<a href="lập-trình-với-ngôn-ngữ-python.html#các-quy-tắc-khi-đặt-biến-trong-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Tên của biến phải được bắt đầu bằng một chữ hoặc một ký tự underscore (dấu gạch dưới: _).</li>
+<li>Tên của biến không thể bắt đầu bằng một con số. Ngoài ký tự bắt đầu ra thì trong tên biến có thể sử dụng số, chữ và dấu gạch dưới như bình thường.</li>
+<li>Biến trong Python phải có tên riêng, không trùng lặp với tên của các biến đang tồn tại trên file làm việc của bạn.</li>
+<li>Tên biến của phân biệt chữ hoa và chữ thường như chúng mình đã đề cập trong bài viết về các lưu ý quan trọng cho người mới học Python.</li>
+</ul>
+<p>Ví dụ</p>
+<p>Khi biến bắt đầu bằng ký tự <code>_</code>, Python không báo lỗi</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb14-1" tabindex="-1"></a>_name <span class="op">=</span> <span class="st">&quot;Phạm Xuân Bách&quot;</span></span></code></pre></div>
+<p>Khi biến bắt đầu bắt ký tự số <code>1</code>, Python báo lỗi <code>SyntaxError</code>, đây là một lỗi thuộc về lỗi cú pháp</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb15-1" tabindex="-1"></a><span class="dv">1</span><span class="er">name</span> <span class="op">=</span> <span class="st">&quot;Phạm Xuân Bách&quot;</span></span></code></pre></div>
+<pre><code>Cell In[10], line 1
+    1name = &quot;Phạm Xuân Bách&quot;
+    ^
+SyntaxError: invalid decimal literal</code></pre>
+<p>#Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb17-1" tabindex="-1"></a>name1 <span class="op">=</span> <span class="st">&quot;Phạm Xuân Bách&quot;</span></span>
+<span id="cb17-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb17-2" tabindex="-1"></a>name1 <span class="op">=</span> <span class="st">&quot;Phạm Đình Đức&quot;</span></span>
+<span id="cb17-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb17-3" tabindex="-1"></a><span class="bu">print</span>(name1)</span></code></pre></div>
+<p>Lúc này Python sẽ hiểu giá trị gần nhất được gán là</p>
+<pre><code>Phạm Đình Đức</code></pre>
 
 </div>
 </div>

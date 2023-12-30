@@ -43,6 +43,97 @@ name = "Phạm Xuân Bách"
 print(name)
 ```
 
-```{block, type='code_output'}
+```
 Phạm Xuân Bách
+```
+
+### Tại sao phải cần khai báo biến
+
+Hãy tưởng tượng như sau, bạn có một số dữ liệu là những con số với nhiều chữ số và các thao tác tính toán
+
+```python
+52348252408 + 523482034
+```
+
+```
+52871734442
+```
+
+```python
+52348252408 + 12312454534534
+```
+
+```
+12364802786942
+```
+
+```python
+523482034 + 12312454534534
+```
+
+```
+12312978016568
+```
+
+Một điều mà các bạn dễ dàng nhận ra đó là những con số với nhiều chữ số gây khó khăn trong việc sử dụng vì chúng có quá nhiều chữ số, đôi lúc chúng ta cũng có thể vô tình gây sai lệnh giá trị. Do đó ta cần đặt các biến lưu trữ các giá trị để có thể sử dụng lại. Đồng thời khi ta thay đổi giá trị của biến, các phép tính liên quan đến biến đó cũng thay đổi giá trị theo.
+
+```python
+a = 52348252408
+b = 523482034
+c = 12312454534534
+a + b
+```
+
+```
+52871734442
+```
+
+```python
+a + c
+```
+
+```
+12364802786942
+```
+
+### Các quy tắc khi đặt biến trong Python
+
+- Tên của biến phải được bắt đầu bằng một chữ hoặc một ký tự underscore (dấu gạch dưới: _).
+- Tên của biến không thể bắt đầu bằng một con số. Ngoài ký tự bắt đầu ra thì trong tên biến có thể sử dụng số, chữ và dấu gạch dưới như bình thường.
+- Biến trong Python phải có tên riêng, không trùng lặp với tên của các biến đang tồn tại trên file làm việc của bạn.
+- Tên biến của phân biệt chữ hoa và chữ thường như chúng mình đã đề cập trong bài viết về các lưu ý quan trọng cho người mới học Python.
+
+Ví dụ
+
+Khi biến bắt đầu bằng ký tự `_`, Python không báo lỗi
+
+```python
+_name = "Phạm Xuân Bách"
+```
+
+Khi biến bắt đầu bắt ký tự số `1`, Python báo lỗi `SyntaxError`, đây là một lỗi thuộc về lỗi cú pháp
+
+```python
+1name = "Phạm Xuân Bách"
+```
+
+```
+Cell In[10], line 1
+    1name = "Phạm Xuân Bách"
+    ^
+SyntaxError: invalid decimal literal
+```
+
+#Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên
+
+```python
+name1 = "Phạm Xuân Bách"
+name1 = "Phạm Đình Đức"
+print(name1)
+```
+
+Lúc này Python sẽ hiểu giá trị gần nhất được gán là
+
+```
+Phạm Đình Đức
 ```
