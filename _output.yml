@@ -35,23 +35,23 @@ bookdown::pdf_book:
   toc_appendix: yes
   quote_footer: ["\\VA{", "}{}"]
 bookdown::epub_book:
-  # dev: svglite
+  dev: svglite
   stylesheet: css/style.css
-  config:
-  toc:
-    toc_depth: 2
-    collapse: subsection
-    scroll_highlight: yes
-    before: |
-      <li><a href="./">Python For Data Analyst 2023</a></li>
-    after: |
-      <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
-  edit: null
-  download: no
-  fontsettings:
-    theme: white
-    family: Merriweather
-    size: 4
-  sharing:
-    github: yes
-    facebook: yes
+  # config:
+  # toc:
+  #   toc_depth: 2
+  #   collapse: subsection
+  #   scroll_highlight: yes
+  #   before: |
+  #     <li><a href="./">Python For Data Analyst 2023</a></li>
+  #   after: |
+  #     <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
+  # edit: null
+  # download: no
+  # fontsettings:
+  #   theme: white
+  #   family: Merriweather
+  #   size: 4
+  # sharing:
+  #   github: yes
+  #   facebook: yes

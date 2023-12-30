@@ -1,0 +1,7 @@
+giơi-thiêu-python-va-cac-công-cu-hô-trơ
+lập-trình-với-ngôn-ngữ-python
+nội-dung-buổi-học
+khai-báo-biến
+biến-là-gì
+tại-sao-phải-cần-khai-báo-biến
+các-quy-tắc-khi-đặt-biến-trong-python
