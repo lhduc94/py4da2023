@@ -36,4 +36,4 @@ bookdown::pdf_book:
   quote_footer: ["\\VA{", "}{}"]
 bookdown::epub_book:
   dev: svglite
-  stylesheet: css/style.css
+  stylesheet: [css/style.css, css/toc.css, css/highlight.css]
