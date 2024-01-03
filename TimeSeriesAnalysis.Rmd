@@ -1,3 +1,21 @@
+--- 
+title: "Python for Data Analyst 2023"
+author: "Lê Huỳnh Đức"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+description: "Python for Data Analyst 2023"
+---
+
+# Lời nói đầu {-}
+
+<!--chapter:end:index.Rmd-->
+
+# Giới thiệu Python và các công cụ hỗ trợ
+
+<!--chapter:end:posts/01-Introduction.Rmd-->
+
 # Lập trình với ngôn ngữ Python
 ## Nội dung chương
 - Giới thiệu các biến trong Python​
@@ -148,3 +166,6 @@ print(name1)
 ```{block, type='code_ouput}
 Phạm Đình Đức
 ```
+
+<!--chapter:end:posts/02-Python.Rmd-->
+
