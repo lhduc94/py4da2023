@@ -73,7 +73,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 52348252408 + 523482034
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 52871734442
 ```
 
@@ -81,7 +81,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 52348252408 + 12312454534534
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 12364802786942
 ```
 
@@ -89,7 +89,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 523482034 + 12312454534534
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 12312978016568
 ```
 
@@ -107,7 +107,7 @@ Ví dụ khi tính cộng a và b
 a + b
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 52871734442
 ```
 
@@ -115,7 +115,7 @@ a + b
 a + c
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 12364802786942
 ```
 
@@ -141,7 +141,7 @@ Khi đặt tên biến có số ở đầu, Python sẽ báo lỗi `Synt
 1name = "Phạm Xuân Bách"
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
   Cell In[10], line 1
     1name = "Phạm Xuân Bách"
     ^
@@ -163,7 +163,7 @@ name1 = "Phạm Đình Đức"
 print(name1)
 ```
 
-```{block, type='code_ouput}
+```{block2, type='code_ouput}
 Phạm Đình Đức
 ```
 
