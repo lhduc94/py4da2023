@@ -1,7 +1,6 @@
 giơi-thiêu-python-va-cac-công-cu-hô-trơ
 lập-trình-với-ngôn-ngữ-python
 nội-dung-chương
-khai-báo-biến-khai-bao-bien
 biến-là-gì
 tại-sao-phải-cần-khai-báo-biến
 các-quy-tắc-khi-đặt-biến-trong-python
