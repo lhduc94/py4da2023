@@ -18,7 +18,11 @@ bookdown::gitbook:
     sharing:
       github: yes
       facebook: yes
-
+  pandoc_args:
+    - --filter
+    - bin/pygments-filter.py
+    - --csl
+    - chicago-fullnote-bibliography.csl
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
@@ -37,3 +41,21 @@ bookdown::pdf_book:
 bookdown::epub_book:
   dev: svglite
   stylesheet: css/style.css
+  config:
+  toc:
+    toc_depth: 2
+    collapse: subsection
+    scroll_highlight: yes
+    before: |
+      <li><a href="./">Python For Data Analyst 2023</a></li>
+    after: |
+      <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
+  edit: null
+  download: no
+  fontsettings:
+    theme: white
+    family: Merriweather
+    size: 4
+  sharing:
+    github: yes
+    facebook: yes

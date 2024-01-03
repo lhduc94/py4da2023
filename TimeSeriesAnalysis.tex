@@ -216,14 +216,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Phân tích Chuỗi thời gian},
+  pdftitle={Python for Data Analyst 2023},
   pdfauthor={Lê Huỳnh Đức},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Phân tích Chuỗi thời gian}
+\title{Python for Data Analyst 2023}
 \author{Lê Huỳnh Đức}
-\date{2023-12-28}
+\date{2023-12-30}
 
 \begin{document}
 \maketitle
@@ -243,867 +243,183 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\hypertarget{lux1eddi-nuxf3i-ux111ux1ea7u}{%
-\chapter*{Lời nói đầu}\label{lux1eddi-nuxf3i-ux111ux1ea7u}}
+\chapter*{Lời nói đầu}\label{lux1eddi-nuxf3i-ux111ux1ea7u}
 
 
-\hypertarget{giux1edbi-thiux1ec7u-cux1a1-bux1ea3n-vux1ec1-time-series}{%
-\chapter{Giới thiệu Cơ bản về Time Series}\label{giux1edbi-thiux1ec7u-cux1a1-bux1ea3n-vux1ec1-time-series}}
+\chapter{Giới thiệu Python và các công cụ hỗ trợ}\label{giux1a1i-thiuxeau-python-va-cac-cuxf4ng-cu-huxf4-trux1a1}
 
-\hypertarget{time-series-luxe0-guxec}{%
-\section{Time Series là gì}\label{time-series-luxe0-guxec}}
+\chapter{Lập trình với ngôn ngữ Python}\label{lux1eadp-truxecnh-vux1edbi-nguxf4n-ngux1eef-python}
 
-Chuỗi thời gian là tập hợp các quan sát \(y_t\) theo thời gian tuần tự.
-
-Chuỗi thời gian rời rạc là tập hợp các điểm quan sát có khoảng cách quan sát lớn hơn một giây. Chuỗi thời gian rời rạc có thể có những đặc điểm:
+\section{Nội dung buổi học}\label{nux1ed9i-dung-buux1ed5i-hux1ecdc}
 
 \begin{itemize}
 \item
-  Thời gian thu thập các điểm dữ liệu có thể là không thường xuyên ( mỗi điểm mỗi phút) hoặc không quy tắc (hành vi đăng nhập của người dùng tại bất cứ thời điểm nào).
+  Giới thiệu các biến trong Python\hspace{0pt}
 \item
-  Có thể bị mất dữ liệu do mất kết nối mạng hoặc máy chủ không phản hồi.
+  Các kiểu dữ liệu cơ bản: float, int, str, bool\hspace{0pt}
+\item
+  Chuyển đổi dữ liệu\hspace{0pt}
+\item
+  Cấu trúc dữ liệu cơ bản: List, set, tuple, dictionary\hspace{0pt}
+\item
+  Toán tử số học, toán tử so sánh, toán tử logic\hspace{0pt}
+\item
+  Các phương thức trên string\hspace{0pt}
+\item
+  Các phương thức cho dữ liệu Datetime\hspace{0pt}
+\item
+  Câu lệnh có điều kiện\hspace{0pt}
+\item
+  Vòng lặp trong python\hspace{0pt}
+\item
+  Function\hspace{0pt}
+\item
+  Comment trong python
 \end{itemize}
 
-Chuỗi thời gian liên tục là tập hợp các điểm quan sát có khoảng cách quan sát là một giây.
+\section{Khai báo biến}\label{khai-buxe1o-biux1ebfn}
 
-\begin{rmdnote}
-\textbf{Thời gian là gì}
+\subsection{Biến là gì}\label{biux1ebfn-luxe0-guxec}
 
-Thời gian có thể định nghĩa theo:
+Biến là vị trí bộ nhớ được dành riêng để lưu trữ dữ liệu.\\
+Một khi biến đã được lưu trữ, nghĩa là một khoảng không gian đã được cấp phát trong bộ nhớ đó.\\
+Dựa trên kiểu dữ liệu của một biến, trình thông dịch cấp phát bộ nhớ và quyết định những gì có thể được lưu trữ trong khu nhớ dành riêng đó.\\
+Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn có thể lưu trữ số nguyên, văn bản, số thập phân cho biến\\
+\includegraphics{images/week2/variable.png}
 
-\begin{itemize}
-\tightlist
-\item
-  Giờ, phút giây
-\item
-  Theo không gian: Máy thứ nhất, máy thứ hai trong cùng một băng chuyền
-\item
-  Theo độ sâu: Xuống 1 milimet, xuống 2 milimet
-\end{itemize}
-
-Tóm lại, miễn các thông tin tuân theo thời gian và có hướng giá trị tuân theo
-\end{rmdnote}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{cuxe1c-patterns-time-series}{%
-\section{Các patterns Time Series}\label{cuxe1c-patterns-time-series}}
-
-Khi mô tả về chuỗi thời gian, chúng ta thường nhắc đến các yếu tố như xu hướng, chu kỳ và theo mùa.
-
-\textbf{\emph{Xu hướng}}
-
-Chúng ta nói dữ liệu có tính xu hướng khi nó tăng hoặc giảm trong một thời gian dài, xu hướng không nhất thiết phải là tăng/giảm tuyến tính, nó có thể là đường cong. Một chuỗi thời gian có thể tồn tại cả xu hướng tăng và xu hướng giảm cùng một lúc.
-
-Ví dụ về dân số Việt Nam có xu hướng tăng hằng năm
-\includegraphics{../images/01/danso.png}
-
-Ví dụ về tỉ lệ tử vong của trẻ sơ sinh có xu hướng giảm dần thời gian nhờ có sự tiến bộ về y tế
-\includegraphics{https://upload.wikimedia.org/wikipedia/commons/1/15/First-World-Infant-Mortality-Trends.jpg}
-
-Ví dụ về sự thay đổi của giá Bitcoin theo thời gian, giá bitcoin có xu hướng tăng mạnh từ giữa tháng 08/2020 đến 03/2021, đến tháng 11/2021 bắt đầu có xu hướng giảm dần
-\includegraphics{../images/01/coin.png}
-
-\textbf{\emph{Thời vụ}}
-
-Một chuỗi thời gian có tính chất thời vụ khi các giá trị của chuỗi thời gian bị ảnh hưởng bởi thời điểm nào đó trong năm hoặc theo ngày của mỗi tuần. Tính chất thời vụ luôn có tần suất tăng/giảm cố định và đã biết trước.
-Ví dụ như
-
-\begin{itemize}
-\item
-  Số lượng hành khách đặt vé máy bay tăng cao vào các ngày lễ tết.
-\item
-  Lượng khách trong nhà hàng tăng cao vào các ngày cuối tuần.
-\item
-  Lượng quần áo mua cao nhất vào tháng 12 cuối năm và thấp nhất vào tháng 1 mỗi năm
-\end{itemize}
-
-\includegraphics{../images/01/seasonal.png}
-
-\textbf{\emph{Chu kì}}
-
-Biến đổi chu kỳ xảy ra khi một dữ liệu tăng giảm không có tần suất cố định. Những biến động này thường xảy ra do điều kiện kinh tế và hay gọi là ``chu kì kinh doanh''. Độ dài của một chu kì thường ít nhất là 2 năm.
-
-\includegraphics{https://sciencetheory.net/wp-content/uploads/2020/03/Business-Cycle-Graph-e1577193470836.png}
-
-\textbf{\emph{Irregularity}}
-Unexpected situations/events/scenarios and spikes in a short time span.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{cuxe1c-ux111ux1eb7c-ux111iux1ec3m-cux1ee7a-time-series}{%
-\section{Các đặc điểm của Time Series}\label{cuxe1c-ux111ux1eb7c-ux111iux1ec3m-cux1ee7a-time-series}}
-
-\hypertarget{stationary-tuxednh-dux1eebng-cux1ee7a-dux1eef-liux1ec7u}{%
-\subsection{Stationary (Tính dừng của dữ liệu)}\label{stationary-tuxednh-dux1eebng-cux1ee7a-dux1eef-liux1ec7u}}
-
-Chuỗi thời gian dừng là chuỗi có các đặc trưng thống kê như mean, variance, autocorrelation không đổi theo thời gian.
-
-\hypertarget{lag}{%
-\subsection{Lag}\label{lag}}
-
-Lag của Time Series thể hiện việc lùi về một mốc trước đó. Ví dụ lag(1) nghĩa là lùi về trước đó 1 đơn vị \(X_{T-1}\). Lag(n) nghĩa là lùi về trước đó n đơn vị \(X_{T-n}\)
-
-Ví dụ về số lượng quần áo bán ra của US từ năm 1992 đến năm 2019
+Để khai báo biến trong Python, ta dùng cú pháp\hspace{0pt} \texttt{tenbien\ =\ giá\ trị}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}../data/us{-}retail{-}sales.csv\textquotesingle{}}\NormalTok{)}
-\NormalTok{df}
+\NormalTok{name }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+Để in giá trị của biến ra màn hình, ta dùng cú pháp \texttt{print(tenbien)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(name)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-         Month  Clothing
-0   1992-01-01  6938
-1   1992-02-01  7524
-2   1992-03-01  8475
-3   1992-04-01  9401
-4   1992-05-01  9558
-... ... ...
-331 2019-08-01  23829
-332 2019-09-01  19567
-333 2019-10-01  21400
-334 2019-11-01  25170
-335 2019-12-01  35157
+Phạm Xuân Bách
 \end{verbatim}
 
-Trong pandas, để tìm lag, ta dùng phương thức \texttt{shift}. Ví dụ
+\subsection{Tại sao phải cần khai báo biến}\label{tux1ea1i-sao-phux1ea3i-cux1ea7n-khai-buxe1o-biux1ebfn}
+
+Hãy tưởng tượng như sau, bạn có một số dữ liệu là những con số với nhiều chữ số và các thao tác tính toán
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df[}\StringTok{\textquotesingle{}lag\_1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{].shift(}\DecValTok{1}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}lag\_3\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{].shift(}\DecValTok{3}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}lag\_12\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{].shift(}\DecValTok{12}\NormalTok{)}
-\NormalTok{df}
+\DecValTok{52348252408} \OperatorTok{+} \DecValTok{523482034}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-         Month  Clothing    lag_1    lag_3   lag_12
-0   1992-01-01      6938      NaN      NaN      NaN
-1   1992-02-01      7524   6938.0      NaN      NaN
-2   1992-03-01      8475   7524.0      NaN      NaN
-3   1992-04-01      9401   8475.0   6938.0      NaN
-4   1992-05-01      9558   9401.0   7524.0      NaN
-..         ...       ...      ...      ...      ...
-331 2019-08-01     23829  21742.0  23079.0  23121.0
-332 2019-09-01     19567  23829.0  21116.0  19782.0
-333 2019-10-01     21400  19567.0  21742.0  21203.0
-334 2019-11-01     25170  21400.0  23829.0  25364.0
-335 2019-12-01     35157  25170.0  19567.0  33950.0
+52871734442
 \end{verbatim}
 
-\hypertarget{autocorrelation-tux1ef1-tux1b0ux1a1ng-quan}{%
-\subsection{Autocorrelation (Tự tương quan)}\label{autocorrelation-tux1ef1-tux1b0ux1a1ng-quan}}
-
-\textbf{Correlation}
-
-Correlation là tương quan giữa 2 biến khác nhau, giá trị correlation nằm trong khoảng từ -1 đến 1, nếu giá trị càng tiến -1 nghĩa là 2 biến có sự tương quan nghịch, giá trị càng tiến đến +1 nghĩa là 2 biến có sự tương quan thuận
-
-\textbf{Autocorrelation}
-
-Autocorrelation là tương quan giữa một chuỗi timeseries và chuỗi đó với giá trị trước đó của chính nó.
-Ví dụ tương quan giữa \texttt{Clothing} và \texttt{lag\_1}
-
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df[[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}lag\_1\textquotesingle{}}\NormalTok{]].corr()}
+\DecValTok{52348252408} \OperatorTok{+} \DecValTok{12312454534534}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{            Clothing       lag\_1}
-\NormalTok{Clothing    }\FloatTok{1.000000}    \FloatTok{0.518296}
-\NormalTok{lag\_1       }\FloatTok{0.518296}    \FloatTok{1.000000}
-\end{Highlighting}
-\end{Shaded}
-
-Tương quan giữa 2 biến này là 0.5
-
-\includegraphics{../images/01/lag_corr.png}
-
-Để tính correlation giữa Timeseries và các lag của nó, ta sử dụng hàm \texttt{acf} trong statsmodel
+\begin{verbatim}
+12364802786942
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ statsmodels.api }\ImportTok{import}\NormalTok{ tsa}
-\NormalTok{tsa.acf(df[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{])}
+\DecValTok{523482034} \OperatorTok{+} \DecValTok{12312454534534}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+12312978016568
+\end{verbatim}
+
+Một điều mà các bạn dễ dàng nhận ra đó là những con số với nhiều chữ số gây khó khăn trong việc sử dụng vì chúng có quá nhiều chữ số, đôi lúc chúng ta cũng có thể vô tình gây sai lệnh giá trị. Do đó ta cần đặt các biến lưu trữ các giá trị để có thể sử dụng lại. Đồng thời khi ta thay đổi giá trị của biến, các phép tính liên quan đến biến đó cũng thay đổi giá trị theo.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{array([}\FloatTok{1.}\NormalTok{        , }\FloatTok{0.50679045}\NormalTok{, }\FloatTok{0.42793583}\NormalTok{, }\FloatTok{0.48943282}\NormalTok{, }\FloatTok{0.54920848}\NormalTok{,}
-       \FloatTok{0.51760066}\NormalTok{, }\FloatTok{0.47709491}\NormalTok{, }\FloatTok{0.50840091}\NormalTok{, }\FloatTok{0.5311846}\NormalTok{ , }\FloatTok{0.46104267}\NormalTok{,}
-       \FloatTok{0.38738473}\NormalTok{, }\FloatTok{0.45582436}\NormalTok{, }\FloatTok{0.9264336}\NormalTok{ , }\FloatTok{0.45220705}\NormalTok{, }\FloatTok{0.37936738}\NormalTok{,}
-       \FloatTok{0.43736208}\NormalTok{, }\FloatTok{0.49102051}\NormalTok{, }\FloatTok{0.46205604}\NormalTok{, }\FloatTok{0.42158496}\NormalTok{, }\FloatTok{0.4519868}\NormalTok{ ,}
-       \FloatTok{0.47432784}\NormalTok{, }\FloatTok{0.403097}\NormalTok{  , }\FloatTok{0.33531148}\NormalTok{, }\FloatTok{0.40104508}\NormalTok{, }\FloatTok{0.85039363}\NormalTok{,}
-       \FloatTok{0.39243258}\NormalTok{])}
+\NormalTok{a }\OperatorTok{=} \DecValTok{52348252408}
+\NormalTok{b }\OperatorTok{=} \DecValTok{523482034}
+\NormalTok{c }\OperatorTok{=} \DecValTok{12312454534534}
+\NormalTok{a }\OperatorTok{+}\NormalTok{ b}
 \end{Highlighting}
 \end{Shaded}
 
-Ở đây correlation giữa \texttt{Clothing} và \texttt{lag\_1} là 0.507, hơi khác so với dùng pandas, trong khuôn khổ phần này ta tập trung vào thư viện \texttt{statsmodels} hơn
-
-Để visualize các giá trị correlation này ta dùng hàm \texttt{plot\_acf}, ví dụ vẽ autocorrelation với lag tối đa là 30
+\begin{verbatim}
+52871734442
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
-\ImportTok{from}\NormalTok{ statsmodels.graphics.tsaplots }\ImportTok{import}\NormalTok{ plot\_acf}
-\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{))}
-\NormalTok{plot\_acf(df[}\StringTok{\textquotesingle{}Clothing\textquotesingle{}}\NormalTok{], lags}\OperatorTok{=}\DecValTok{30}\NormalTok{, ax}\OperatorTok{=}\NormalTok{ax)}
-\NormalTok{\_ }\OperatorTok{=}\NormalTok{plt.xticks(}\BuiltInTok{list}\NormalTok{(}\BuiltInTok{range}\NormalTok{(}\DecValTok{31}\NormalTok{)))}
-\NormalTok{plt.show()}
+\NormalTok{a }\OperatorTok{+}\NormalTok{ c}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{../images/01/auto_corr.png}
+\begin{verbatim}
+12364802786942
+\end{verbatim}
 
-Trong hình vẽ ta có thể thấy, correlation tại lag=12 và lag=24 có giá trị rất cao, do đó có thể suy đoán được timeseries này có tính tuần hoàn sau 12 tháng
-
-\hypertarget{ux1ee9ng-dux1ee5ng-cux1ee7a-autocorrelation}{%
-\subsubsection{Ứng dụng của Autocorrelation}\label{ux1ee9ng-dux1ee5ng-cux1ee7a-autocorrelation}}
+\subsection{Các quy tắc khi đặt biến trong Python}\label{cuxe1c-quy-tux1eafc-khi-ux111ux1eb7t-biux1ebfn-trong-python}
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Xử lý Tín Hiệu và Thời Gian}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Phân tích chuỗi thời gian}: Được sử dụng để phát hiện chu kỳ, mô hình chuỗi thời gian, và dự đoán giá trị trong tương lai.
-  \item
-    \textbf{Xử lý âm thanh}: Trong xử lý tín hiệu âm thanh, tự động tương quan có thể được sử dụng để phát hiện các tần số quan trọng và các sự kiện lặp lại trong dữ liệu âm thanh.
-  \end{itemize}
+  Tên của biến phải được bắt đầu bằng một chữ hoặc một ký tự underscore (dấu gạch dưới: \_).
 \item
-  \textbf{Khoa học Dữ Liệu}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Phân tích dữ liệu}: Trong khoa học dữ liệu và thống kê, tự động tương quan giúp phát hiện mối tương quan giữa các biến và mô tả sự phụ thuộc thời gian của dữ liệu.
-  \item
-    \textbf{Phát hiện xu hướng và chu kỳ}: Tự động tương quan có thể giúp xác định xu hướng và chu kỳ trong dữ liệu, giúp các nhà nghiên cứu và chuyên gia dự đoán và phân tích xu hướng thị trường, tình hình thời tiết, và nhiều ứng dụng khác.
-  \end{itemize}
+  Tên của biến không thể bắt đầu bằng một con số. Ngoài ký tự bắt đầu ra thì trong tên biến có thể sử dụng số, chữ và dấu gạch dưới như bình thường.
 \item
-  \textbf{Kỹ thuật và Kỹ thuật số}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Xử lý ảnh}: Trong xử lý ảnh, tự động tương quan có thể được sử dụng để phát hiện biến đổi không gian và mô hình hình dạng.
-  \item
-    \textbf{Kỹ thuật số và mạng truyền thông}: Trong mạng truyền thông số và kỹ thuật số, tự động tương quan giúp phân tích tín hiệu, phát hiện tín hiệu trong nhiễu và cải thiện chất lượng truyền thông.
-  \end{itemize}
+  Biến trong Python phải có tên riêng, không trùng lặp với tên của các biến đang tồn tại trên file làm việc của bạn.
 \item
-  \textbf{Tài chính và Kinh tế}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Phân tích thị trường: Trong tài chính, tự động tương quan giúp phân tích và dự đoán xu hướng thị trường, giúp các nhà giao dịch và nhà đầu tư hiểu rõ hơn về sự biến động và rủi ro trong thị trường tài chính.
-  \end{itemize}
-\item
-  \textbf{Khoa học và Tâm lý học}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Nghiên cứu tâm lý}: Trong nghiên cứu tâm lý, tự động tương quan có thể được sử dụng để phân tích sự phụ thuộc thời gian của các biến tâm lý và hành vi, giúp hiểu rõ hơn về sự ảnh hưởng và tương tác giữa các yếu tố khác nhau trong tâm lý học.
-    Như vậy, tự động tương quan là một công cụ quan trọng và linh hoạt, được sử dụng rộng rãi trong nhiều lĩnh vực để phân tích, mô hình, và hiểu rõ hơn về sự phụ thuộc và tương tác trong dữ liệu và các hệ thống phức tạp.
-  \end{itemize}
+  Tên biến của phân biệt chữ hoa và chữ thường như chúng mình đã đề cập trong bài viết về các lưu ý quan trọng cho người mới học Python.
 \end{itemize}
 
-\hypertarget{partial-autocorrelation}{%
-\subsection{Partial Autocorrelation}\label{partial-autocorrelation}}
+Ví dụ
 
-Partial Autocorrelation cũng tương tự như Autocorrelation. Tuy nhiên, nó mở rộng hơn bằng cách loại bỏ ảnh hưởng của các mốc thời gian trước đó.
-
-Ví dụ tương quan Partial Autocorrelation với lag = 3 sẽ bỏ qua các giá trị trễ tại lag = 1 và lag = 2
-
-\hypertarget{cuxe1c-buxe0i-touxe1n-vux1ec1-chuux1ed7i-thux1eddi-gian}{%
-\section{Các bài toán về chuỗi thời gian}\label{cuxe1c-buxe0i-touxe1n-vux1ec1-chuux1ed7i-thux1eddi-gian}}
-
-\hypertarget{dux1b0-bao-chuuxf4i-thux1a1i-gian}{%
-\subsection{Dự báo chuỗi thời gian}\label{dux1b0-bao-chuuxf4i-thux1a1i-gian}}
-
-\hypertarget{phuxe2n-loux1ea1i-chuux1ed7i-thux1eddi-gian}{%
-\subsection{Phân loại chuỗi thời gian}\label{phuxe2n-loux1ea1i-chuux1ed7i-thux1eddi-gian}}
-
-\hypertarget{phuxe2n-ux111oux1ea1n-chuux1ed7i-thux1eddi-gian}{%
-\subsection{Phân đoạn chuỗi thời gian}\label{phuxe2n-ux111oux1ea1n-chuux1ed7i-thux1eddi-gian}}
-
-\hypertarget{smoothing}{%
-\chapter{Smoothing}\label{smoothing}}
-
-Kỹ thuật làm mịn là một trong các kỹ thuật tiền xử lý dữ liệu để loại bỏ các nhiễu trong dữ liệu. Việc làm mịn dữ liệu giúp xóa bỏ mùa vụ của dữ liệu và giúp đơn giản hóa các mô hình dự đoán.
-
-Các kỹ thuật làm mịn dữ liệu bao gồm:
-
-\begin{itemize}
-\tightlist
-\item
-  Làm mịn trung bình trượt (Moving Average Smoothing)
-\item
-  Làm mịn cấp số nhân (Exponential Smoothing)
-\end{itemize}
-
-\hypertarget{moving-average-smoothing}{%
-\section{Moving Average Smoothing}\label{moving-average-smoothing}}
-
-Có 2 loại trung bình trượt : Centered MA và Trailing MA
-
-\hypertarget{centered-moving-average}{%
-\subsection{Centered Moving Average}\label{centered-moving-average}}
-
-Với trung bình trượt với cửa sổ trượt \(k\) bằng 3 ta có:
-
-\[\begin{align}
-\Large s_{t} = \frac{y_{t+1} + y_{t} + y_{t-1}}{3}
-\end{align}\]
-
-Tổng quát hơn
-
-\[\begin{align}
-\Large s_{t} = \frac{1}{k}  \sum_{j=-m}^{m}{y_{t+j}}
-\end{align}\]
-
-Trong đó \(k = 2m + 1\)
-
-Phương pháp này sử dụng giá trị tương lai \(y_{t+1}\) do đó không áp dụng được vào các mô hình dự báo. Phương pháp dùng để thống kê mô tả dữ liệu
-
-\hypertarget{trailing-moving-average}{%
-\subsection{Trailing Moving Average}\label{trailing-moving-average}}
-
-Với trung bình trượt với cửa sổ trượt \(k\) bằng 3 ta có
-
-\[\begin{align}
-\Large s_{t} = \frac{y_{t} + y_{t - 1} + y_{t - 2}}{3}
-\end{align}\]
-
-Tổng quát hơn
-
-\[\begin{align}
-\Large s_{t} = \frac{1}{k} \sum^{k}_{i=1}{y_{t-i+1}}
-\end{align}\]
-
-Phương pháp này chỉ sử dụng dữ liệu quá khứ nên có thể áp dụng cho việc dự báo các giá trị tương lai
-
-\hypertarget{vuxed-dux1ee5}{%
-\subsection{Ví dụ}\label{vuxed-dux1ee5}}
-
-Dưới đây là ví dụ về số bé gái sinh ra mỗi ngày
+Khi biến bắt đầu bằng ký tự \texttt{\_}, Python không báo lỗi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}../data/daily{-}total{-}female{-}births.csv\textquotesingle{}}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ pd.to\_datetime(df[}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{])}
-\NormalTok{df[}\StringTok{\textquotesingle{}lag\_1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].shift(}\DecValTok{1}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}lag\_2\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].shift(}\DecValTok{2}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}lead\_1\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].shift(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
-\NormalTok{df[}\StringTok{\textquotesingle{}Centered\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ (df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{] }\OperatorTok{+}\NormalTok{ df[}\StringTok{\textquotesingle{}lead\_1\textquotesingle{}}\NormalTok{] }\OperatorTok{+}\NormalTok{ df[}\StringTok{\textquotesingle{}lag\_1\textquotesingle{}}\NormalTok{])}\OperatorTok{/}\DecValTok{3}
-\NormalTok{df[}\StringTok{\textquotesingle{}Trailing\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ (df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{] }\OperatorTok{+}\NormalTok{ df[}\StringTok{\textquotesingle{}lag\_1\textquotesingle{}}\NormalTok{] }\OperatorTok{+}\NormalTok{ df[}\StringTok{\textquotesingle{}lag\_2\textquotesingle{}}\NormalTok{])}\OperatorTok{/}\DecValTok{3}
+\NormalTok{\_name }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+Khi biến bắt đầu bắt ký tự số \texttt{1}, Python báo lỗi \texttt{SyntaxError}, đây là một lỗi thuộc về lỗi cú pháp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\ErrorTok{name} \OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-          Date Births   lag_1   lag_2   lead_1  Centered_MA Trailing_MA
-0   1959-01-01     35     NaN     NaN     32.0          NaN         NaN
-1   1959-01-02     32    35.0     NaN     30.0    32.333333         NaN 
-2   1959-01-03     30    32.0    35.0     31.0    31.000000   32.333333
-3   1959-01-04     31    30.0    32.0     44.0    35.000000   31.000000
-4   1959-01-05     44    31.0    30.0     29.0    34.666667   35.000000
-...        ...    ...     ...     ...      ...          ...         ...
-360 1959-12-27     37    34.0    44.0     52.0    41.000000   38.333333
-361 1959-12-28     52    37.0    34.0     48.0    45.666667   41.000000
-362 1959-12-29     48    52.0    37.0     55.0    51.666667   45.666667
-363 1959-12-30     55    48.0    52.0     50.0    51.000000   51.666667
-364 1959-12-31     50    55.0    48.0      NaN          NaN   51.000000
+Cell In[10], line 1
+    1name = "Phạm Xuân Bách"
+    ^
+SyntaxError: invalid decimal literal
 \end{verbatim}
 
-Ta cũng có thể sử dụng phương thức \texttt{rolling()} trong Pandas
+Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df[}\StringTok{\textquotesingle{}Centered\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{3}\NormalTok{, center}\OperatorTok{=}\VariableTok{True}\NormalTok{).mean()}
-\NormalTok{df[}\StringTok{\textquotesingle{}Trailing\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{3}\NormalTok{, center}\OperatorTok{=}\VariableTok{False}\NormalTok{).mean()}
+\NormalTok{name1 }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\NormalTok{name1 }\OperatorTok{=} \StringTok{"Phạm Đình Đức"}
+\BuiltInTok{print}\NormalTok{(name1)}
 \end{Highlighting}
 \end{Shaded}
 
-Để visualize dữ liệu, ta có thể dùng \texttt{seaborn}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
-\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt }
-
-\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
-\NormalTok{plt.title(}\StringTok{"Births"}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}original\textquotesingle{}}\NormalTok{)}
-\CommentTok{\# sns.lineplot(x=\textquotesingle{}Month\textquotesingle{}, y=\textquotesingle{}Centered\_MA\textquotesingle{}, data=df, label=\textquotesingle{}Centered\_MA\textquotesingle{})}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}Trailing\_MA\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.yticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.legend(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{../images/02/MA.png}
-
-với các tham số \(k =6\) và \(k=12\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{fig1 }\OperatorTok{=}\NormalTok{ plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
-\NormalTok{df[}\StringTok{\textquotesingle{}Births\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{6}\NormalTok{, center}\OperatorTok{=}\VariableTok{False}\NormalTok{).mean()}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}original\textquotesingle{}}\NormalTok{)}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\_MA\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}6{-}MA\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Month\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.yticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Birds\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.legend(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.title(}\StringTok{\textquotesingle{}6{-}MA\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{../images/02/6-MA.png}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{fig2 }\OperatorTok{=}\NormalTok{ plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
-\NormalTok{df[}\StringTok{\textquotesingle{}Births\_MA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].rolling(window}\OperatorTok{=}\DecValTok{12}\NormalTok{, center}\OperatorTok{=}\VariableTok{False}\NormalTok{).mean()}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}original\textquotesingle{}}\NormalTok{)}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\_MA\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}12{-}MA\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.yticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.legend(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.title(}\StringTok{\textquotesingle{}12{-}MA\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{../images/02/12-MA.png}
-
-\hypertarget{exponential-smoothing}{%
-\section{Exponential Smoothing}\label{exponential-smoothing}}
-
-Hàm làm mịn Exponential là một hàm làm mịn sử dụng hàm mũ. Trong khi các hàm Moving Average đơn giản sử dụng các giá trị quá khứ với trọng số bằng nhau thì hàm Exponential sử dụng hàm số mũ cho trọng số đảm bảo giảm dần theo thời gian.
-
-\hypertarget{simple-exponential-smoothing}{%
-\subsection{Simple Exponential Smoothing}\label{simple-exponential-smoothing}}
-
-Hàm làm mịn Exponential thường áp dụng vào xử lý tín hiệu số để lọc những nhiễu có tầm số cao. Hàm này là dạy truy hồi với công thức như sau
-
-\(s_{0} = y_{0}\)
-
-\(s_{t} = \alpha y_{t} + (1 - \alpha)s_{t-1}, t > 0\)
-
-Trong đó \(\alpha\) được gọi là tham số smoothing và \(0 < \alpha < 1\)
-
-\textbf{Tại sao lại gọi là Hàm mũ}
-
-Với công thức Truy hồi trên ta có thể biến đổi như sau
-
-\(s_t = \alpha y_t + (1 - \alpha)s_{t-1}\)
-
-\(s_t = \alpha y_t + (1 - \alpha)(\alpha y_{t-1} + (1 - \alpha)s_{t-2})\)
-
-\(s_t = \alpha y_t + \alpha(1 - \alpha)y_{t-1} + (1-\alpha)^2s_{t-2}\)
-
-\(s_t = \alpha[y_t + (1 - \alpha)y_{t-1} + (1-\alpha)^2y_{t-2} + (1-\alpha)^3y_{t-3} + ... +(1-\alpha)^Ty_0]\)
-
-Ta có thể thấy \(s_t\) có liên quan đến trung bình các giá trị với các trọng số
-\(1, (1-\alpha), (1-\alpha)^2, ....,(1-\alpha)^T\)
-
-Dưới đây là code mẫu cho cách tính Exponential Smoothing
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{def}\NormalTok{ exponential\_smoothing(Y, alpha):}
-\NormalTok{    S }\OperatorTok{=}\NormalTok{ np.zeros(Y.shape[}\DecValTok{0}\NormalTok{])}
-\NormalTok{    S[}\DecValTok{0}\NormalTok{] }\OperatorTok{=}\NormalTok{ Y[}\DecValTok{0}\NormalTok{]}
-    \ControlFlowTok{for}\NormalTok{ t }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, Y.shape[}\DecValTok{0}\NormalTok{]):}
-\NormalTok{        S[t] }\OperatorTok{=}\NormalTok{ alpha }\OperatorTok{*}\NormalTok{ Y[t] }\OperatorTok{+}\NormalTok{ (}\DecValTok{1}\OperatorTok{{-}}\NormalTok{ alpha) }\OperatorTok{*}\NormalTok{ S[t}\OperatorTok{{-}}\DecValTok{1}\NormalTok{]}
-    \ControlFlowTok{return}\NormalTok{ S}
-\end{Highlighting}
-\end{Shaded}
-
-Hoặc chúng ta cũng có thể sử dụng phương thức \texttt{ewm} của \texttt{Pandas} hoặc Class \texttt{SimpleExpSmoothing} của thư viện \texttt{statsmodel.tsa}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ statsmodels.api }\ImportTok{import}\NormalTok{ tsa}
-\CommentTok{\#\# dùng pandas}
-\NormalTok{df[}\StringTok{\textquotesingle{}ExponentialSmoothing\_PANDAS\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{].ewm(alpha}\OperatorTok{=}\FloatTok{0.3}\NormalTok{, adjust}\OperatorTok{=}\VariableTok{False}\NormalTok{).mean()}
-\CommentTok{\#\# dùng functions}
-\NormalTok{df[}\StringTok{\textquotesingle{}ExponentialSmoothing\_FUNCTION\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ exponential\_smoothing(df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{], }\FloatTok{0.3}\NormalTok{)}
-\CommentTok{\#\# dùng tsa}
-\NormalTok{es }\OperatorTok{=}\NormalTok{ tsa.SimpleExpSmoothing(df[}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{])}
-\NormalTok{df[}\StringTok{\textquotesingle{}ExponentialSmoothing\_tSA\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ es.predict(es.params, start}\OperatorTok{=}\DecValTok{1}\NormalTok{, end}\OperatorTok{=}\NormalTok{df.shape[}\DecValTok{0}\NormalTok{])}
-\NormalTok{df}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{    Date        Births  ExponentialSmoothing\_PANDAS ExponentialSmoothing\_FUNCTION   ExponentialSmoothing\_tSA}
-\DecValTok{0}   \DecValTok{1959}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}      \DecValTok{35}                    \FloatTok{35.000000}                     \FloatTok{35.000000}                  \FloatTok{35.000000}
-\DecValTok{1}   \DecValTok{1959}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{2}      \DecValTok{32}                    \FloatTok{34.100000}                     \FloatTok{34.100000}                  \FloatTok{34.100000}
-\DecValTok{2}   \DecValTok{1959}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{3}      \DecValTok{30}                    \FloatTok{32.870000}                     \FloatTok{32.870000}                  \FloatTok{32.870000}
-\DecValTok{3}   \DecValTok{1959}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{4}      \DecValTok{31}                    \FloatTok{32.309000}                     \FloatTok{32.309000}                  \FloatTok{32.309000}
-\DecValTok{4}   \DecValTok{1959}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{5}      \DecValTok{44}                    \FloatTok{35.816300}                     \FloatTok{35.816300}                  \FloatTok{35.816300}
-\NormalTok{...        ...     ...                          ...                           ...                        ...}
-\DecValTok{360} \DecValTok{1959}\OperatorTok{{-}}\DecValTok{12}\OperatorTok{{-}}\DecValTok{27}      \DecValTok{37}                    \FloatTok{38.828280}                     \FloatTok{38.828280}                  \FloatTok{38.828280}
-\DecValTok{361} \DecValTok{1959}\OperatorTok{{-}}\DecValTok{12}\OperatorTok{{-}}\DecValTok{28}      \DecValTok{52}                    \FloatTok{42.779796}                     \FloatTok{42.779796}                  \FloatTok{42.779796}
-\DecValTok{362} \DecValTok{1959}\OperatorTok{{-}}\DecValTok{12}\OperatorTok{{-}}\DecValTok{29}      \DecValTok{48}                    \FloatTok{44.345857}                     \FloatTok{44.345857}                  \FloatTok{44.345857}
-\DecValTok{363} \DecValTok{1959}\OperatorTok{{-}}\DecValTok{12}\OperatorTok{{-}}\DecValTok{30}      \DecValTok{55}                    \FloatTok{47.542100}                     \FloatTok{47.542100}                  \FloatTok{47.542100}
-\DecValTok{364} \DecValTok{1959}\OperatorTok{{-}}\DecValTok{12}\OperatorTok{{-}}\DecValTok{31}      \DecValTok{50}                    \FloatTok{48.279470}                     \FloatTok{48.279470}                  \FloatTok{48.279470}
-\end{Highlighting}
-\end{Shaded}
-
-Biểu đồ so sánh giữa giá trị gốc và Exponential Smoothing
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{fig4}\OperatorTok{=}\NormalTok{ plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}original\textquotesingle{}}\NormalTok{)}
-\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}ExponentialSmoothing\_PANDAS\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, label}\OperatorTok{=}\StringTok{\textquotesingle{}ExponentialSmoothing\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.xticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.yticks(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Births\textquotesingle{}}\NormalTok{,fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.legend(fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\NormalTok{plt.title(}\StringTok{\textquotesingle{}Exponential Smoothing with alpha=0.3\textquotesingle{}}\NormalTok{, fontsize}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{../images/02/Exponential_Smoothing.png}
-
-\hypertarget{double-exponential-smoothing-holts-method}{%
-\subsection{Double Exponential Smoothing (Holt's Method)}\label{double-exponential-smoothing-holts-method}}
-
-\hypertarget{triple-exponential-smoothing-holt-winters-method}{%
-\subsection{Triple Exponential Smoothing (Holt-Winters' Method)}\label{triple-exponential-smoothing-holt-winters-method}}
-
-\hypertarget{arima}{%
-\chapter{ARIMA}\label{arima}}
-
-\hypertarget{autoregressive-model}{%
-\section{Autoregressive Model}\label{autoregressive-model}}
-
-Mô hình tự hồi quy là mô hình ước lượng giá trị tương lai của timeseries dựa vào các giá trị trong quá khứ cửa chính timeseries đó.
-
-Công thức tự hồi quy được biểu diễn như sau
-
-\[
-y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + \phi_3 y_{t-3} + .... + \phi_p y_{t-p} + \epsilon_t
-\]
-
-Hoặc có thể viết lại
-
-\[
-y_t = c + \sum^{p}_{1}\phi y_{t-i} + \epsilon_t
-\]
-
-Trong đó: \(\epsilon_t\) là nhiễu trắng. Có thể nói mô hình này là mô hình hồi quy đa biến với các biến là các giá trị lag tại thời điểm từ \(1\) đến \(p\). Chúng ta kí hiệu mô hình này là \(AR(p)\)
-
-Để sử dụng AR model, ta dùng class \texttt{AutoReg} của thư viện \texttt{statsmodels}, chúng ta dùng \texttt{root\_mean\_squared\_error} để đánh giá mô hình. Mô hình sẽ được huấn luyện và dự đoán cho 7 ngày tiếp theo
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ statsmodels.tsa.ar\_model }\ImportTok{import}\NormalTok{ AutoReg}
-\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd }
-\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
-
-\CommentTok{\# Đọc dữ liệu}
-\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}../data/daily{-}total{-}female{-}births.csv\textquotesingle{}}\NormalTok{)}
-\NormalTok{df.head()}
-
-\CommentTok{\# Chia dữ liệu thành train test}
-\NormalTok{Y }\OperatorTok{=}\NormalTok{ df.Births.values}
-\NormalTok{train, test }\OperatorTok{=}\NormalTok{ Y[:}\BuiltInTok{len}\NormalTok{(Y)}\OperatorTok{{-}}\DecValTok{7}\NormalTok{], Y[}\BuiltInTok{len}\NormalTok{(Y)}\OperatorTok{{-}}\DecValTok{7}\NormalTok{:]}
-
-\CommentTok{\# Huấn luyện mô hình với p=2}
-\NormalTok{AR\_model }\OperatorTok{=}\NormalTok{ AutoReg(train, lags}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
-\NormalTok{AR\_results }\OperatorTok{=}\NormalTok{ AR\_model.fit()}
-\CommentTok{\# Dự đoán kết quả mô hình}
-\NormalTok{Y\_hat }\OperatorTok{=}\NormalTok{ AR\_results.forecast(}\DecValTok{7}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{ y\_hat, y\_true }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(Y\_hat, test):}
-    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Predicted=}\SpecialCharTok{\{}\NormalTok{y\_hat}\SpecialCharTok{\}}\SpecialStringTok{ }\CharTok{\textbackslash{}t}\SpecialStringTok{Expected=}\SpecialCharTok{\{}\NormalTok{y\_true}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.009982996211406}\NormalTok{    Expected}\OperatorTok{=}\DecValTok{44}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.3395707860348}\NormalTok{      Expected}\OperatorTok{=}\DecValTok{34}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.741049087971845}\NormalTok{    Expected}\OperatorTok{=}\DecValTok{37}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.8524930508191}\NormalTok{      Expected}\OperatorTok{=}\DecValTok{52}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.91850636281712}\NormalTok{     Expected}\OperatorTok{=}\DecValTok{48}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.94330911921793}\NormalTok{     Expected}\OperatorTok{=}\DecValTok{55}
-\NormalTok{Predicted}\OperatorTok{=}\FloatTok{41.95535989900887}\NormalTok{     Expected}\OperatorTok{=}\DecValTok{50}
-\end{Highlighting}
-\end{Shaded}
-
-Để xem các params của mô hình ta gọi \texttt{model\_fit.params}. Trong đó giá trị đầu tiên là hằng số \(c\), các giá trị tiếp theo tương ứng là các \(\phi\) tại các lag
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{AR\_results.params}
-\end{Highlighting}
-\end{Shaded}
+Lúc này Python sẽ hiểu giá trị gần nhất được gán là
 
 \begin{verbatim}
-array([29.46548462,  0.18468755,  0.11315929])
+Phạm Đình Đức
 \end{verbatim}
-
-Để đánh giá kết quả mô hình, chúng ta dùng thư viện \texttt{sklearn.metrics}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ mean\_squared\_error}
-\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}RMSE:\textquotesingle{}}\NormalTok{, np.sqrt(mean\_squared\_error(test, Y\_hat)))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-8.110283777968577
-\end{verbatim}
-
-Dưới đây là biểu đồ thể hiện giá trị Dự đoán và giá trị thực tế trong 7 ngày
-
-\includegraphics{../images/03/autoregressive.png}
-
-Chúng ta có thể mô phỏng lại cách tính các giá trị dự đoán dựa trên các params của model với \(c=29.46548462, \phi_t=0.18468755, \phi_{t-1}=0.11315929\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{Y\_hat\_sim }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(train[}\OperatorTok{{-}}\DecValTok{2}\NormalTok{:])}
-\NormalTok{c }\OperatorTok{=} \FloatTok{29.46548462}
-\NormalTok{phi\_1 }\OperatorTok{=} \FloatTok{0.18468755}
-\NormalTok{phi\_2 }\OperatorTok{=} \FloatTok{0.11315929}
-
-\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{7}\NormalTok{):}
-\NormalTok{    predict }\OperatorTok{=}\NormalTok{ c }\OperatorTok{+}\NormalTok{ phi\_1}\OperatorTok{*}\NormalTok{Y\_hat\_sim[}\OperatorTok{{-}}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\NormalTok{ phi\_2}\OperatorTok{*}\NormalTok{Y\_hat\_sim[}\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
-\NormalTok{    Y\_hat\_sim.append(predict)}
-
-\ControlFlowTok{for}\NormalTok{ a, b }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(Y\_hat\_sim[}\DecValTok{2}\NormalTok{:], Y\_hat):}
-    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Simulated=}\SpecialCharTok{\{}\NormalTok{a}\SpecialCharTok{\}}\SpecialStringTok{ }\CharTok{\textbackslash{}t}\SpecialStringTok{ Predicted=}\SpecialCharTok{\{}\NormalTok{b}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Simulated=41.00998312            Predicted=41.009982996211406
-Simulated=41.33957094797416      Predicted=41.3395707860348
-Simulated=41.74104926920371      Predicted=41.741049087971845
-Simulated=41.85249324133591      Predicted=41.8524930508191
-Simulated=41.918506557292        Predicted=41.91850636281712
-Simulated=41.94330931564456      Predicted=41.94330911921793
-Simulated=41.95536009628208      Predicted=41.95535989900887
-\end{verbatim}
-
-\hypertarget{moving-average-model}{%
-\section{Moving Average Model}\label{moving-average-model}}
-
-Thay vì sử dụng các giá trị trong quá khứ làm đầu vào để dự đoán, Moving Average Model sử dụng các lỗi dự báo của quá khứ để dự đoán giá trị tiếp theo.
-
-Lưu ý cần phân biệt Moving Average Smoothing và Moving Average Model.
-
-\textbf{Moving Average Smoothing}
-
-\begin{quote}
-Ý tưởng chính là sử dụng một cửa sổ trượt trên chuỗi dữ liệu và tính trung bình của các giá trị trong cửa sổ đó. Kết quả là chuỗi dữ liệu mới, nơi mà các dao động ngắn hạn hoặc nhiễu được giảm thiểu, giúp nhận diện xu hướng và mô hình hóa chuỗi dữ liệu dễ dàng hơn.
-\end{quote}
-
-\begin{quote}
-Ví dụ, khi bạn thấy một chuỗi dữ liệu có nhiều dao động ngắn hạn và bạn muốn làm trơn nó để nhận diện xu hướng chung, bạn có thể sử dụng moving average smoothing để tạo ra một phiên bản làm trơn của chuỗi dữ liệu.
-\end{quote}
-
-Công thức MA model như sau
-
-\[
-y_t = c + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + \theta_3 \epsilon_{t-3} + .... + \theta_q \epsilon_{t-q} + \epsilon_t 
-\]
-Hoặc có thể viết lại
-
-\[
-y_t = c  + \sum^{q}_{i=1}\theta_{i}\epsilon_{t-i} +  \epsilon_t
-\]
-
-Trong đó \(c\) là trung bình series, \(\epsilon_{t-i}\) là white noise tại \(t-i\). Trong thực tế, chúng ta không có quan sát cho các giá trị white noise này, do đó nó không thực sự là hồi quy theo nghĩa hiểu thông thường.
-
-Trong thư viện \texttt{statsmodels} không hỗ trợ chính thức cách tính \textbf{Moving Average Model}, nhưng chúng ta có thể áp dụng thông qua \texttt{ARIMA}.
-
-Ví dụ về cách sử dụng ARMA
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Huấn luyện mô hình với q=2}
-\NormalTok{MA\_model }\OperatorTok{=}\NormalTok{ ARIMA(train, order}\OperatorTok{=}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{))}
-\NormalTok{MA\_results }\OperatorTok{=}\NormalTok{ MA\_model.fit()}
-\CommentTok{\# Dự đoán kết quả mô hình}
-\NormalTok{Y\_hat }\OperatorTok{=}\NormalTok{ MA\_results.predict(start}\OperatorTok{=}\BuiltInTok{len}\NormalTok{(train), end}\OperatorTok{=}\BuiltInTok{len}\NormalTok{(train)}\OperatorTok{+}\BuiltInTok{len}\NormalTok{(test)}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, dynamic}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{ y\_hat, y\_true }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(Y\_hat, test):}
-    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Predicted=}\SpecialCharTok{\{}\NormalTok{y\_hat}\SpecialCharTok{\}}\SpecialStringTok{ }\CharTok{\textbackslash{}t}\SpecialStringTok{Expected=}\SpecialCharTok{\{}\NormalTok{y\_true}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-Predicted=41.11548396873163     Expected=44
-Predicted=41.5656013608698      Expected=34
-Predicted=41.89874024020355     Expected=37
-Predicted=41.89874024020355     Expected=52
-Predicted=41.89874024020355     Expected=48
-Predicted=41.89874024020355     Expected=55
-Predicted=41.89874024020355     Expected=50
-\end{verbatim}
-
-xem các tham số \(\theta\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{MA\_results.maparams}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-array([0.17900771,  0.11330768])
-\end{verbatim}
-
-xem tham số \(c\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{MA\_results.params[}\DecValTok{0}\NormalTok{]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-41.89874024020355
-\end{verbatim}
-
-Đánh giá kết quả mô hình
-
-\begin{verbatim}
-print('RMSE:', np.sqrt(mean_squared_error(test, Y_hat)))
-\end{verbatim}
-
-\begin{verbatim}
-RMSE: 8.15992514853609
-\end{verbatim}
-
-để xem các espilon
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{MA\_results.resid}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-array([-6.89874024e+00, -8.58294190e+00, -9.63603195e+00, -8.20730676e+00,
-...
-       -4.87763328e+00, -2.26772814e+00, -2.94012608e+00])
-\end{verbatim}
-
-Dưới đây là biểu đồ thể hiện giá trị Dự đoán và giá trị thực tế trong 7 ngày
-
-\includegraphics{../images/03/MA_model.png}
-
-Nếu để ý kỹ, chúng ta sẽ thấy kể từ giá trị dự đoán thứ 3, giá trị dự đoán bằng đầu là một giá trị không đổi 41.89874024020355. Lý do là mô hình không biết trước các sai số dự đoán của các giá trị tiếp theo để từ bước tính toán thứ 3.
-Để mô phỏng lại cách tính toán.
-Ta có \(c = 41.89874024 ,\theta_{t} = 0.17900771, \theta_{t-1} = 0.11330768\)
-và
-\(resid_t = -2.94012608, resid_{t-1}=-2.26772814\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{c }\OperatorTok{=} \FloatTok{41.89874024}
-\NormalTok{theta\_t }\OperatorTok{=} \FloatTok{0.17900771}
-\NormalTok{theta\_t\_prev\_1 }\OperatorTok{=} \FloatTok{0.11330768}
-\NormalTok{resid\_t }\OperatorTok{=} \OperatorTok{{-}}\FloatTok{2.94012608}
-\NormalTok{resid\_t\_prev\_1 }\OperatorTok{=} \OperatorTok{{-}}\FloatTok{2.2677281}
-\end{Highlighting}
-\end{Shaded}
-
-lúc này, giá trị dự báo cho T+1 sẽ là:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{c }\OperatorTok{+}\NormalTok{ theta\_t }\OperatorTok{*}\NormalTok{ resid\_t }\OperatorTok{+}\NormalTok{ theta\_t\_prev\_1 }\OperatorTok{*}\NormalTok{ resid\_t\_prev\_1}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-41.11548399342612
-\end{verbatim}
-
-lúc này, giá trị dự báo cho T+2 sẽ là:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{resid\_t\_prev\_1 }\OperatorTok{=}\NormalTok{ resid\_t}
-\NormalTok{resid\_t }\OperatorTok{=} \DecValTok{0}
-\NormalTok{c }\OperatorTok{+}\NormalTok{ theta\_t }\OperatorTok{*}\NormalTok{ resid\_t }\OperatorTok{+}\NormalTok{ theta\_t\_prev\_1 }\OperatorTok{*}\NormalTok{ resid\_t\_prev\_1}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-41.565601374967706
-\end{verbatim}
-
-Và giá trị từ T+3 trở đi sẽ là
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{resid\_t\_prev\_1 }\OperatorTok{=}\NormalTok{ resid\_t }\CommentTok{\# = 0}
-\CommentTok{\# lúc này resid\_t từ T+2 đã bằng 0 }
-\CommentTok{\# nên giá trị resid\_t\_previous\_1 cũng bằng 0, }
-\CommentTok{\# do đó kết quả trở về giá trị trung bình c}
-\NormalTok{resid\_t }\OperatorTok{=} \DecValTok{0}
-\NormalTok{c }\OperatorTok{+}\NormalTok{ theta\_t }\OperatorTok{*}\NormalTok{ resid\_t }\OperatorTok{+}\NormalTok{ theta\_t\_prev\_1 }\OperatorTok{*}\NormalTok{ resid\_t\_prev\_1}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-41.89874024
-\end{verbatim}
-
-Đây cũng chính là điểm yếu của mô hình Moving Average
-
-\hypertarget{autoregressive-moving-average-model}{%
-\section{AutoRegressive Moving Average Model}\label{autoregressive-moving-average-model}}
-
-Như cái tên của nó, mô hình này kết hợp 2 Mô hình Autoregressive và Moving Average
-
-Nhăc lại công thức AR
-
-\[
-y_t = c + \sum^{p}_{1}\phi y_{t-i} + \epsilon_t
-\]
-
-Và công thức MA
-
-\[
-y_t = c  + \sum^{q}_{i=1}\theta_{i}\epsilon_{t-i} +  \epsilon_t
-\]
-
-Do đó công thức ARMA là kết hợp cả hai công thức.
-
-\[
-y_t = c + \epsilon_t + \sum^{p}_{1}\phi y_{t-i}  + \sum^{q}_{i=1}\theta_{i}\epsilon_{t-i}
-\]
-
-Tương tự, trong thư viện \texttt{statsmodels} không hỗ trợ chính thức cách tính \textbf{Moving Average Model}, nhưng chúng ta có thể áp dụng thông qua \texttt{ARIMA}. Ở phần sau chúng ta sẽ tìm hiểu về \texttt{ARIMA} rồi quay ngược lại ví dụ về \texttt{MA}
-
-\hypertarget{autogregressive-integrated-moving-average-model}{%
-\subsection{Autogregressive Integrated Moving Average Model}\label{autogregressive-integrated-moving-average-model}}
 
 \printindex
 

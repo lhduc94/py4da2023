@@ -61,7 +61,7 @@ name = "Phạm Xuân Bách"
 print(name)
 ```
 
-```{block, type='code_output'}
+```
 Phạm Xuân Bách
 ```
 
