@@ -1,6 +1,6 @@
 # Lập trình với ngôn ngữ Python
 ## Nội dung chương
-- Giới thiệu các biến trong Python​
+- Khai báo biến
 
 - Các kiểu dữ liệu cơ bản: float, int, str, bool​
 
@@ -22,7 +22,7 @@
 
 - Comment trong python
 
-## Khai báo biến
+## Khai báo biến(#khai-bao-bien)
 
 ### Biến là gì
 Biến là vị trí bộ nhớ được dành riêng để lưu trữ dữ liệu. \
