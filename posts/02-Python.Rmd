@@ -22,7 +22,7 @@
 
 - Comment trong python
 
-## Khai báo biến(#khai-bao-bien)
+## Khai báo biến (#khai-bao-bien)
 
 ### Biến là gì
 Biến là vị trí bộ nhớ được dành riêng để lưu trữ dữ liệu. \
