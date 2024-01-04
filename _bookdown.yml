@@ -8,6 +8,6 @@ output_dir: "docs"
 rmd_files: [
   "index.Rmd",
   "posts/introduction/01-introduction.Rmd",
-  "posts/Pythons/02-Python.Rmd",
-  "posts/Pythons/030-Python_BT.Rmd"
+  "posts/Python/02-Python.Rmd",
+  "posts/Python/030-Python_BT.Rmd"
   ]
