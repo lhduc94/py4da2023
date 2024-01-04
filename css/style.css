@@ -19,7 +19,12 @@ p code {
   white-space: inherit;
 }
 
-
+.book.font-family-0 {
+  font-family: 'Droid Serif', Georgia, serif;
+}
+.book.font-family-1 {
+  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .book .book-body .page-wrapper .page-inner section.normal pre {
   border: 1px solid #c9c9c9;
   box-shadow: 1px 1px 1px #d8d8d8;
