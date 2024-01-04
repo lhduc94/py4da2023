@@ -1,5 +1,5 @@
 Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-@REM Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
+Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 
 git add .
 git commit -m "push book"
