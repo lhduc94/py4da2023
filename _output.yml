@@ -2,7 +2,7 @@ bookdown::gitbook:
   css: [css/style.css, css/toc.css]
   config:
     toc:
-      toc_depth: 2
+      # toc_depth: 2
       collapse: section
       scroll_highlight: yes
       before: |
