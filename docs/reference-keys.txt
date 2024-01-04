@@ -11,15 +11,4 @@ bcnn
 giai_thua
 chia_cho_5
 parse_string_01
-lập-trình-với-ngôn-ngữ-python-1
-nội-dung-chương-1
-khai-báo-biến-1
-biến-là-gì-1
-tại-sao-phải-cần-khai-báo-biến-1
-các-quy-tắc-khi-đặt-biến-trong-python-1
-bai-tâp-1
-ucln-1
-bcnn-1
-giai_thua-1
-chia_cho_5-1
-parse_string_01-1
+abc
