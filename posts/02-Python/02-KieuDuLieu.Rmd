@@ -1,6 +1,7 @@
 ## Kiểu dữ liệu
 
 Kiểu dữ liệu là một khái niệm rất quan trọng trong lập trình. Các biến có thể lưu trữ các loại dữ liệu khác nhau và mỗi  loại khác nhau có thể làm những việc khác nhau. Đối với Python, ngôn ngữ lập trình có các kiểu dữ liệu sau được tích hợp sẵn theo mặc định, cụ thể như sau:
+
 - Text Type: str
 - Numeric Types:  int, float, complex
 - Boolean Type: bool
