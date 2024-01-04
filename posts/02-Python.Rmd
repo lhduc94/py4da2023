@@ -55,7 +55,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 52348252408 + 523482034
 ```
 
-```
+```{.python_output}
 52871734442
 ```
 
@@ -63,7 +63,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 52348252408 + 12312454534534
 ```
 
-```
+```{.python_output}
 12364802786942
 ```
 
@@ -71,7 +71,7 @@ Hãy tưởng tượng như sau, bạn có một số dữ liệu là những co
 523482034 + 12312454534534
 ```
 
-```
+```{.python_output}
 12312978016568
 ```
 
@@ -89,7 +89,7 @@ Ví dụ khi tính cộng a và b
 a + b
 ```
 
-```
+```{.python_output}
 52871734442
 ```
 
@@ -97,7 +97,7 @@ a + b
 a + c
 ```
 
-```
+```{.python_output}
 12364802786942
 ```
 
