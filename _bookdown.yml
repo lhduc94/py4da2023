@@ -3,10 +3,11 @@ language:
   ui:
     chapter_name: "Chương "
 delete_merged_file: true
-# rmd_subdir: ["posts"]
+rmd_subdir: ["posts"]
 output_dir: "docs"
-rmd_files: [
-  "index.Rmd",
-  "posts/Python/01-Python.Rmd",
-  "posts/Python/02-Python_BT.Rmd"
-  ]
+# rmd_files: [
+#   "index.Rmd",
+#   "introduction/introduction.Rmd",
+#   "posts/Python/01-Python.Rmd",
+#   "posts/Python/02-Python_BT.Rmd"
+#   ]

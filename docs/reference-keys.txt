@@ -1,3 +1,4 @@
+giơi-thiêu-python-va-cac-công-cu-hô-trơ
 lập-trình-với-ngôn-ngữ-python
 nội-dung-chương
 khai-báo-biến
