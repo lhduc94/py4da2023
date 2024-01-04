@@ -229,3 +229,125 @@ print(int(a))
 ```{.python_output}
 -2
 ```
+
+Lưu ý khi chuỗi tương ứng với float thì ép kiểu int sẽ báo lỗi
+
+```python
+a = "2.5"
+print(int(a))
+```
+
+```{.python_output}
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[40], line 2
+      1 a = "2.5"
+----> 2 print(int(a))
+
+ValueError: invalid literal for int() with base 10: '2.5'
+```
+
+Ép dữ liệu từ nhị phân sang int, lúc này ở hàm khởi tạo, chúng ta thêm tham số cơ số vào.
+
+```python
+# nhị phân
+a = b'10101'
+print(int(a,2))
+```
+
+```{.python_output}
+21
+```
+
+```python
+a = '0B1010'
+print(int(a,2))
+```
+
+```{.python_output}
+10
+```
+
+```python
+# bát phân
+a = b'0o1012'
+print(int(a,8))
+```
+
+```{.python_output}
+522
+```
+
+```python
+#thập lục phân
+a = '0x4A5E'
+print(int(a,16))
+```
+
+```{.python_output}
+19038
+```
+
+
+#### Ép kiểu sang float
+
+- Ép kiểu int sang float
+
+```python
+a = 2
+print(float(a))
+```
+
+```{.python_output}
+2.0
+```
+
+- Ép kiểu string sang float
+
+```python
+a = "2.34"
+print(float(a))
+```
+
+```{.python_output}
+2.34
+```
+```python
+a = "2.0"
+print(float(a))
+```
+
+```{.python_output}
+2.0
+```
+
+```python
+a = "2"
+print(float(a))
+```
+
+```{.python_output}
+2.0
+```
+
+#### Ép kiểu sang string
+
+- ép kiểu int sang str
+
+```python
+a = 2
+print(str(2))
+```
+
+```{.python_output}
+2
+```
+
+```python
+a = 2.5
+print(str(a))
+```
+
+```{.python_output}
+2.5
+```

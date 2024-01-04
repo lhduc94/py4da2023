@@ -12,6 +12,8 @@ kiêu-dư-liêu-chuôi-ky-tư-string-trong-python
 kiêu-dư-liêu-boolean
 ep-kiêu-dư-liêu
 ep-kiêu-sang-int
+ep-kiêu-sang-float
+ep-kiêu-sang-string
 cac-toan-tư-trong-python
 toan-tư-sô-hoc
 toán-tử

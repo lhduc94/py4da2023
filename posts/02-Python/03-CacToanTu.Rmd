@@ -1,7 +1,9 @@
 ## Các toán tử trong Python
 
 Toán tử là các biểu tượng cụ thể mà thực hiện một số hoạt động trên một số giá trị và cho ra một kết quả.
+
 Có các loại toán tử chính:
+
 - Toán tử số học
 - Toán tử quan hệ
 - Toán tử logic
