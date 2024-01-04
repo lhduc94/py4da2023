@@ -1,0 +1,22 @@
+# Lập trình với ngôn ngữ Python
+- [Khai báo biến](#khai-báo-biến)
+
+- Các kiểu dữ liệu cơ bản: float, int, str, bool​
+
+- Chuyển đổi dữ liệu​
+
+- Cấu trúc dữ liệu cơ bản: List, set, tuple, dictionary​
+
+- Toán tử số học, toán tử so sánh, toán tử logic​
+
+- Các phương thức trên string​
+
+- Các phương thức cho dữ liệu Datetime​
+
+- Câu lệnh có điều kiện​
+
+- Vòng lặp trong python​
+
+- Function​
+
+- Comment trong python
