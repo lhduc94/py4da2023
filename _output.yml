@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       toc_depth: 2
-      split_by: section
+      collapse: section
       scroll_highlight: yes
       before: |
         <li><a href="./">Python For Data Analyst 2023</a></li>
