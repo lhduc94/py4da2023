@@ -84,12 +84,13 @@ div.sourceCode {
 
 .book .book-summary {
   background-color: #364149;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+
 }
 
 .book .book-summary ul.summary li a {
   padding: 5px 5px 5px 5px;
   color: #ffffff;
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 .book .book-summary ul.summary li.active>a {
