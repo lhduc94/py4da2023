@@ -83,7 +83,7 @@ div.sourceCode {
 }
 
 .book .book-summary {
-  background-color: #3b556e;
+  background-color: #364149;
 }
 
 .book .book-summary ul.summary li a {
@@ -92,7 +92,7 @@ div.sourceCode {
 }
 
 .book .book-summary ul.summary li.active>a {
-  color: #c9eb0b;
+  color: #ffcc00;
 }
 
 .book .book-summary ul.summary li a:hover {
