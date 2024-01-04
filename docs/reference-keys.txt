@@ -7,6 +7,8 @@ tại-sao-phải-cần-khai-báo-biến
 các-quy-tắc-khi-đặt-biến-trong-python
 các-cách-khai-báo-biến-trong-python
 in-dữ-liệu
+kiêu-dư-liêu
+cac-kiêu-dư-liêu-sô-numeric-trong-python
 bai-tâp
 ucln
 bcnn

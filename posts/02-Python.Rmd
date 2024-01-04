@@ -212,4 +212,62 @@ print("Phạm Xuân Bách")
 Phạm Xuân Bách
 ```
 
+Có thể in nhiều giá trị cùng lúc bằng `print()` với các giá trị cách nhau bằng dấu `,`​
 
+```python
+a = 22
+print("Phạm Xuân Bách năm nay", a, "tuổi")
+```
+
+```{.python_output}
+Phạm Xuân Bách năm nay 22 tuổi
+```
+
+## Kiểu dữ liệu
+
+Kiểu dữ liệu là một khái niệm rất quan trọng trong lập trình. Các biến có thể lưu trữ các loại dữ liệu khác nhau và mỗi  loại khác nhau có thể làm những việc khác nhau. Đối với Python, ngôn ngữ lập trình có các kiểu dữ liệu sau được tích hợp sẵn theo mặc định, cụ thể như sau:
+- Text Type: str
+- Numeric Types:  int, float, complex
+- Boolean Type: bool
+- Binary Types: bytes
+
+Bằng việc sử dụng hàm `type()` , bạn có thể lấy bất kỳ kiểu dữ liệu nào của các đối tượng. Ví dụ:
+
+```python
+x = 5
+print(type(x))
+```
+
+```{.python_output}
+<class 'int'>
+```
+
+### Các kiểu dữ liệu số (numeric) trong Python
+
+Python hỗ trợ các kiểu dữ liệu số Integer (số nguyên), Float (số thực) và Complex (số phức). Python định nghĩa các lớp là int, float và complex để lưu trữ và thao tác các kiểu dữ liệu số.
+
+- Integer (số nguyên): viết tắt là `int`, là các số nguyên dương hoặc âm (không có phần phân số). Trong Python, số nguyên không có giới hạn độ dài. Ví dụ
+
+```python
+x = 1
+y = 10
+z = -10
+```
+
+- Float (số thực): biểu diễn bởi lớp `float`. Lớp này đại diện cho các số thực sử dụng dấu phẩy động (15 chữ số chính xác sau dấu thập phân). Các số thực có thể được biểu diễn bằng các ký hiệu e hoặc E, ký hiệu khoa học cho a10b
+
+```python
+x = 3.14
+print(x)
+y = 3E4
+print(y)
+print(type(y))
+```
+
+```{.python_output}
+3.14
+30000.0
+<class 'float'>
+```
+
+- Complex (số phức): biểu diễn bởi lớp phức. Một số phức được viết dưới dạng `x + yj`. trong đó `x, y` là phần thực và `j` là phần ảo.
