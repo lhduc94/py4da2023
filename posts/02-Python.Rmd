@@ -43,7 +43,7 @@ name = "Phạm Xuân Bách"
 print(name)
 ```
 
-```
+```{.python_output}
 Phạm Xuân Bách
 ```
 
