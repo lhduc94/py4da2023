@@ -7,7 +7,7 @@ delete_merged_file: true
 output_dir: "docs"
 rmd_files: [
   "index.Rmd",
-  "posts/introduction/01-introduction"
+  "posts/introduction/01-introduction",
   "posts/Pythons/02-Python.Rmd",
   "posts/Pythons/030-Python_BT.Rmd"
   ]
