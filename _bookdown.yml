@@ -9,5 +9,5 @@ rmd_files: [
   "index.Rmd",
   "posts/introduction/01-introduction.Rmd",
   "posts/Python/02-Python.Rmd",
-  "posts/Python/030-Python_BT.Rmd"
+  "posts/Python/020-Python_BT.Rmd"
   ]
