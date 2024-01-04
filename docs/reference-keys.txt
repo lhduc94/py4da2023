@@ -5,10 +5,11 @@ khai-báo-biến
 biến-là-gì
 tại-sao-phải-cần-khai-báo-biến
 các-quy-tắc-khi-đặt-biến-trong-python
+các-cách-khai-báo-biến-trong-python
+in-dữ-liệu
 bai-tâp
 ucln
 bcnn
 giai_thua
 chia_cho_5
 parse_string_01
-abc

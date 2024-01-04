@@ -123,7 +123,7 @@ Khi đặt tên biến có số ở đầu, Python sẽ báo lỗi `Synt
 1name = "Phạm Xuân Bách"
 ```
 
-```
+```{.python_output}
   Cell In[10], line 1
     1name = "Phạm Xuân Bách"
     ^
@@ -145,6 +145,71 @@ name1 = "Phạm Đình Đức"
 print(name1)
 ```
 
-```
+```{.python_output}
 Phạm Đình Đức
 ```
+
+Ví dụ khai báo với biến viết thường `name1` và viết hoa `NAME1` thì Python sẽ hiểu là hai biến khác nhau.
+
+```python
+name1 = "Phạm Đình Đức"
+NAME1 = "Phạm Xuân Bách"
+print(NAME1)
+print(name1)
+```
+
+```{.python_output}
+Phạm Xuân Bách
+Phạm Đình Đức
+```
+
+### Các cách khai báo biến trong Python
+
+- Khai báo mỗi giá trị mỗi dòng
+
+```python
+a = 1
+b = 2
+c = 3
+```
+
+- Khai báo các biến cùng 1 giá trị, thay vì khai báo
+
+```python
+a = 2000
+b = 2000
+c = 2000
+```
+
+Ta có thể khai báo
+
+```python
+a = b = c = 2000
+```
+
+- Khai báo nhiều biến khác nhau, khác giá trị trên cùng một hàng
+
+```python
+name, age, isMale = "Phạm Xuân Bách", 23, True
+```
+
+- Khai báo giá trị biến này bằng một biến khác
+
+```python
+a = 2000
+b = a
+```
+
+### In dữ liệu​
+
+Để in dữ liệu ra màn hình, ta có thể dùng lệnh `print​()`
+
+```python
+print("Phạm Xuân Bách")
+```
+
+```{.python_output}
+Phạm Xuân Bách
+```
+
+
