@@ -9,6 +9,10 @@ các-cách-khai-báo-biến-trong-python
 in-dữ-liệu
 kiêu-dư-liêu
 cac-kiêu-dư-liêu-sô-numeric-trong-python
+kiêu-dư-liêu-chuôi-ky-tư-string-trong-python
+kiêu-dư-liêu-boolean
+ep-kiêu-dư-liêu
+ep-kiêu-sang-int
 bai-tâp
 ucln
 bcnn
