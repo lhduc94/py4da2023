@@ -1,0 +1,449 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+\usepackage{graphicx}
+\usepackage{Alegreya}
+\usepackage[scale=.7]{sourcecodepro}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\makeatother
+
+\newenvironment{rmdblock}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{kframe}
+  \item
+  }
+  {
+  \end{kframe}
+  \end{itemize}
+  }
+\newenvironment{rmdnote}
+  {\begin{rmdblock}{note}}
+  {\end{rmdblock}}
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\frontmatter
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Python for Data Analyst 2023},
+  pdfauthor={Lê Huỳnh Đức},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Python for Data Analyst 2023}
+\author{Lê Huỳnh Đức}
+\date{2024-01-03}
+
+\begin{document}
+\maketitle
+
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage
+\thispagestyle{empty}
+\begin{center}
+\includegraphics{images/dedication.pdf}
+\end{center}
+
+\setlength{\abovedisplayskip}{-5pt}
+\setlength{\abovedisplayshortskip}{-5pt}
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{lux1eddi-nuxf3i-ux111ux1ea7u}{%
+\chapter*{Lời nói đầu}\label{lux1eddi-nuxf3i-ux111ux1ea7u}}
+
+
+\hypertarget{giux1a1i-thiuxeau-python-va-cac-cuxf4ng-cu-huxf4-trux1a1}{%
+\chapter{Giới thiệu Python và các công cụ hỗ trợ}\label{giux1a1i-thiuxeau-python-va-cac-cuxf4ng-cu-huxf4-trux1a1}}
+
+\hypertarget{lux1eadp-truxecnh-vux1edbi-nguxf4n-ngux1eef-python}{%
+\chapter{Lập trình với ngôn ngữ Python}\label{lux1eadp-truxecnh-vux1edbi-nguxf4n-ngux1eef-python}}
+
+\hypertarget{nux1ed9i-dung-chux1b0ux1a1ng}{%
+\section{Nội dung chương}\label{nux1ed9i-dung-chux1b0ux1a1ng}}
+
+\begin{itemize}
+\item
+  \protect\hyperlink{khai-buxe1o-biux1ebfn}{Khai báo biến}
+\item
+  Các kiểu dữ liệu cơ bản: float, int, str, bool\hspace{0pt}
+\item
+  Chuyển đổi dữ liệu\hspace{0pt}
+\item
+  Cấu trúc dữ liệu cơ bản: List, set, tuple, dictionary\hspace{0pt}
+\item
+  Toán tử số học, toán tử so sánh, toán tử logic\hspace{0pt}
+\item
+  Các phương thức trên string\hspace{0pt}
+\item
+  Các phương thức cho dữ liệu Datetime\hspace{0pt}
+\item
+  Câu lệnh có điều kiện\hspace{0pt}
+\item
+  Vòng lặp trong python\hspace{0pt}
+\item
+  Function\hspace{0pt}
+\item
+  Comment trong python
+\end{itemize}
+
+\hypertarget{khai-buxe1o-biux1ebfn}{%
+\section*{Khai báo biến}\label{khai-buxe1o-biux1ebfn}}
+
+
+\hypertarget{biux1ebfn-luxe0-guxec}{%
+\subsection{Biến là gì}\label{biux1ebfn-luxe0-guxec}}
+
+Biến là vị trí bộ nhớ được dành riêng để lưu trữ dữ liệu.\\
+Một khi biến đã được lưu trữ, nghĩa là một khoảng không gian đã được cấp phát trong bộ nhớ đó.\\
+Dựa trên kiểu dữ liệu của một biến, trình thông dịch cấp phát bộ nhớ và quyết định những gì có thể được lưu trữ trong khu nhớ dành riêng đó.\\
+Vì thế, bằng việc gán các dữ liệu khác nhau cho các biến, bạn có thể lưu trữ số nguyên, văn bản, số thập phân cho biến\\
+\includegraphics{images/week2/variable.png}
+
+Để khai báo biến trong Python, ta dùng cú pháp\hspace{0pt} \texttt{tenbien\ =\ giá\ trị}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{name }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+Để in giá trị của biến ra màn hình, ta dùng cú pháp \texttt{print(tenbien)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Phạm Xuân Bách
+\end{verbatim}
+
+\hypertarget{tux1ea1i-sao-phux1ea3i-cux1ea7n-khai-buxe1o-biux1ebfn}{%
+\subsection{Tại sao phải cần khai báo biến}\label{tux1ea1i-sao-phux1ea3i-cux1ea7n-khai-buxe1o-biux1ebfn}}
+
+Hãy tưởng tượng như sau, bạn có một số dữ liệu là những con số với nhiều chữ số và các thao tác tính toán
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{52348252408} \OperatorTok{+} \DecValTok{523482034}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+52871734442
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{52348252408} \OperatorTok{+} \DecValTok{12312454534534}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+12364802786942
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{523482034} \OperatorTok{+} \DecValTok{12312454534534}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+12312978016568
+\end{verbatim}
+
+Một điều mà các bạn dễ dàng nhận ra đó là những con số với nhiều chữ số gây khó khăn trong việc sử dụng vì chúng có quá nhiều chữ số, đôi lúc chúng ta cũng có thể vô tình gây sai lệnh giá trị. Vì vậy, việc tạo một biến giúp ta quản lý những giá trị này dễ dàng hơn
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \DecValTok{52348252408}
+\NormalTok{b }\OperatorTok{=} \DecValTok{523482034}
+\NormalTok{c }\OperatorTok{=} \DecValTok{12312454534534}
+\end{Highlighting}
+\end{Shaded}
+
+Ví dụ khi tính cộng a và b
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{+}\NormalTok{ b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+52871734442
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{+}\NormalTok{ c}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+12364802786942
+\end{verbatim}
+
+\hypertarget{cuxe1c-quy-tux1eafc-khi-ux111ux1eb7t-biux1ebfn-trong-python}{%
+\subsection{Các quy tắc khi đặt biến trong Python}\label{cuxe1c-quy-tux1eafc-khi-ux111ux1eb7t-biux1ebfn-trong-python}}
+
+\begin{itemize}
+\tightlist
+\item
+  Tên của biến phải được bắt đầu bằng một chữ hoặc một ký tự underscore (dấu gạch dưới: \_).
+\item
+  Tên của biến không thể bắt đầu bằng một con số. Ngoài ký tự bắt đầu ra thì trong tên biến có thể sử dụng số, chữ và dấu gạch dưới như bình thường.
+\item
+  Biến trong Python phải có tên riêng, không trùng lặp với tên của các biến đang tồn tại trên file làm việc của bạn.
+\item
+  Tên biến của phân biệt chữ hoa và chữ thường như chúng mình đã đề cập trong bài viết về các lưu ý quan trọng cho người mới học Python.
+\end{itemize}
+
+Ví dụ
+
+Đặt tên có dấu gạch dưới ở đầu
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\_name }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+Khi đặt tên biến có số ở đầu, Python sẽ báo lỗi \texttt{SyntaxError}, lỗi \texttt{SyntaxError} sẽ báo cho chúng ta biết chúng ta đang vi phạm về lỗi cú pháp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\ErrorTok{name} \OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Cell In[10], line 1
+    1name = "Phạm Xuân Bách"
+    ^
+SyntaxError: invalid decimal literal
+\end{verbatim}
+
+Chúng ta có thể đặt số trong biến ở bất kì đâu ngoại trừ ký tự bắt đầu
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{name1 }\OperatorTok{=} \StringTok{"Phạm Xuân Bách"}
+\end{Highlighting}
+\end{Shaded}
+
+Nếu khai báo với tên trùng biến cũ thì giá trị sẽ bị đè lên
+
+ví dụ khi khai báo \texttt{name1\ =\ "Phạm\ Xuân\ Bách"}, khi ta khai báo \texttt{name1\ =\ Phạm\ Đình\ Đức}, lúc này giá trị sẽ đè lên giá trị cũ
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{name1 }\OperatorTok{=} \StringTok{"Phạm Đình Đức"}
+\BuiltInTok{print}\NormalTok{(name1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Phạm Đình Đức
+\end{verbatim}
+
+\printindex
+
+\end{document}
