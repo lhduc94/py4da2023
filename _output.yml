@@ -2,8 +2,8 @@ bookdown::gitbook:
   css: [css/style.css, css/toc.css]
   config:
     toc:
-      # toc_depth: 2
-      collapse: section
+      toc_depth: 2
+      collapse: subsection
       scroll_highlight: yes
       before: |
         <li><a href="./">Python For Data Analyst 2023</a></li>
