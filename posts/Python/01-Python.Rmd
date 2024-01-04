@@ -1,5 +1,4 @@
 # Lập trình với ngôn ngữ Python
-## Nội dung chương
 - [Khai báo biến](#khai-báo-biến)
 
 - Các kiểu dữ liệu cơ bản: float, int, str, bool​
