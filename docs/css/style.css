@@ -19,12 +19,17 @@ p code {
   white-space: inherit;
 }
 
-pre.output {
-  background: #bd1481;
-}
+
 .book .book-body .page-wrapper .page-inner section.normal pre {
   border: 1px solid #c9c9c9;
   box-shadow: 1px 1px 1px #d8d8d8;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal pre.python_output {
+  background: #080808;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre.python_output code {
+  color: white
 }
 .book .book-body .page-wrapper .page-inner section.normal code {
   color: #bd1481;
@@ -44,6 +49,9 @@ pre.output {
 
 code.sourceCode > span{
   color: black;
+}
+div.sourceCode {
+  background-color: #ffffff;
 }
 
 .rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning{
@@ -71,10 +79,4 @@ code.sourceCode > span{
 }
 .rmdwarning {
   background-image: url("../images/warning.png");
-}
-
-.code_output {
-
-  background: #363633;
-  color: #ffffff;
 }
