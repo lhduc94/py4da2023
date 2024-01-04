@@ -8,8 +8,6 @@ bookdown::gitbook:
         <li><a href="https://OTexts.org" target="blank">Published by OTexts with bookdown</a></li>
     edit:
       link: https://github.com/robjhyndman/fpp2/edit/master/%s
-  includes:
-      in_header: mathjax-config.html
   keep_md: yes
   split_by: section
   toc_depth: 2

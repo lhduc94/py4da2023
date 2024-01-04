@@ -1,7 +1,7 @@
 --- 
 title: "Python for Data Analyst 2023"
 author: "Lê Huỳnh Đức"
-date: "`r Sys.Date()`"
+date: "2024-01-05"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

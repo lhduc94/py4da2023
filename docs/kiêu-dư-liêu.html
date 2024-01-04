@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.3 Kiểu dữ liệu | Python for Data Analyst 2023</title>
+  <meta name="description" content="2.3 Kiểu dữ liệu | Python for Data Analyst 2023" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.3 Kiểu dữ liệu | Python for Data Analyst 2023" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="2.3 Kiểu dữ liệu | Python for Data Analyst 2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.3 Kiểu dữ liệu | Python for Data Analyst 2023" />
+  
+  <meta name="twitter:description" content="2.3 Kiểu dữ liệu | Python for Data Analyst 2023" />
+  
+
+<meta name="author" content="Lê Huỳnh Đức" />
+
+
+<meta name="date" content="2024-01-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="khai-báo-biến.html"/>
+<link rel="next" href="bai-tâp.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Forecasting: Principles and Practice</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Lời nói đầu</a></li>
+<li class="chapter" data-level="1" data-path="giơi-thiêu-python-va-cac-công-cu-hô-trơ.html"><a href="giơi-thiêu-python-va-cac-công-cu-hô-trơ.html"><i class="fa fa-check"></i><b>1</b> Giới thiệu Python và các công cụ hỗ trợ</a></li>
+<li class="chapter" data-level="2" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html"><i class="fa fa-check"></i><b>2</b> Lập trình với ngôn ngữ Python</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="nội-dung-chương.html"><a href="nội-dung-chương.html"><i class="fa fa-check"></i><b>2.1</b> Nội dung chương</a></li>
+<li class="chapter" data-level="2.2" data-path="khai-báo-biến.html"><a href="khai-báo-biến.html"><i class="fa fa-check"></i><b>2.2</b> Khai báo biến</a></li>
+<li class="chapter" data-level="2.3" data-path="kiêu-dư-liêu.html"><a href="kiêu-dư-liêu.html"><i class="fa fa-check"></i><b>2.3</b> Kiểu dữ liệu</a></li>
+<li class="chapter" data-level="2.4" data-path="bai-tâp.html"><a href="bai-tâp.html"><i class="fa fa-check"></i><b>2.4</b> Bài tập</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://OTexts.org" target="blank">Published by OTexts with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Python for Data Analyst 2023</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kiêu-dư-liêu" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Kiểu dữ liệu<a href="kiêu-dư-liêu.html#kiêu-dư-liêu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kiểu dữ liệu là một khái niệm rất quan trọng trong lập trình. Các biến có thể lưu trữ các loại dữ liệu khác nhau và mỗi loại khác nhau có thể làm những việc khác nhau. Đối với Python, ngôn ngữ lập trình có các kiểu dữ liệu sau được tích hợp sẵn theo mặc định, cụ thể như sau:
+- Text Type: str
+- Numeric Types: int, float, complex
+- Boolean Type: bool
+- Binary Types: bytes</p>
+<p>Bằng việc sử dụng hàm <code>type()</code> , bạn có thể lấy bất kỳ kiểu dữ liệu nào của các đối tượng. Ví dụ:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="kiêu-dư-liêu.html#cb32-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb32-2"><a href="kiêu-dư-liêu.html#cb32-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))</span></code></pre></div>
+<pre class="python_output"><code>&lt;class &#39;int&#39;&gt;</code></pre>
+<div id="cac-kiêu-dư-liêu-sô-numeric-trong-python" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Các kiểu dữ liệu số (numeric) trong Python<a href="kiêu-dư-liêu.html#cac-kiêu-dư-liêu-sô-numeric-trong-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python hỗ trợ các kiểu dữ liệu số Integer (số nguyên), Float (số thực) và Complex (số phức). Python định nghĩa các lớp là int, float và complex để lưu trữ và thao tác các kiểu dữ liệu số.</p>
+<ul>
+<li>Integer (số nguyên): viết tắt là <code>int</code>, là các số nguyên dương hoặc âm (không có phần phân số). Trong Python, số nguyên không có giới hạn độ dài. Ví dụ</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="kiêu-dư-liêu.html#cb34-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb34-2"><a href="kiêu-dư-liêu.html#cb34-2" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb34-3"><a href="kiêu-dư-liêu.html#cb34-3" tabindex="-1"></a>z <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span></code></pre></div>
+<ul>
+<li>Float (số thực): biểu diễn bởi lớp <code>float</code>. Lớp này đại diện cho các số thực sử dụng dấu phẩy động (15 chữ số chính xác sau dấu thập phân). Các số thực có thể được biểu diễn bằng các ký hiệu e hoặc E, ký hiệu khoa học cho a10b</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="kiêu-dư-liêu.html#cb35-1" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb35-2"><a href="kiêu-dư-liêu.html#cb35-2" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb35-3"><a href="kiêu-dư-liêu.html#cb35-3" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3E4</span></span>
+<span id="cb35-4"><a href="kiêu-dư-liêu.html#cb35-4" tabindex="-1"></a><span class="bu">print</span>(y)</span>
+<span id="cb35-5"><a href="kiêu-dư-liêu.html#cb35-5" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(y))</span></code></pre></div>
+<pre class="python_output"><code>3.14
+30000.0
+&lt;class &#39;float&#39;&gt;</code></pre>
+<ul>
+<li>Complex (số phức): biểu diễn bởi lớp phức. Một số phức được viết dưới dạng <code>x + yj</code>. trong đó <code>x, y</code> là phần thực và <code>j</code> là phần ảo.</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="kiêu-dư-liêu.html#cb37-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> <span class="ot">5j</span></span>
+<span id="cb37-2"><a href="kiêu-dư-liêu.html#cb37-2" tabindex="-1"></a>y <span class="op">=</span> <span class="ot">5j</span></span>
+<span id="cb37-3"><a href="kiêu-dư-liêu.html#cb37-3" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb37-4"><a href="kiêu-dư-liêu.html#cb37-4" tabindex="-1"></a><span class="bu">print</span>(x<span class="op">+</span>y)</span></code></pre></div>
+<pre class="python_output"><code>(3+5j)
+(3+10j)</code></pre>
+<p>Python thường làm việc với số trong cơ số 10. Để làm việc với cơ số khác ta sử dụng các tiền tố sau</p>
+<ul>
+<li>Hệ nhị phân : ‘0b’ hoặc ‘0B’</li>
+<li>Hệ bát phân : ‘0o’ hoặc ‘0O’</li>
+<li>Hệ thập lục phân ‘0x’ hoặc ‘0X’</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="kiêu-dư-liêu.html#cb39-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&#39;Ob10101&#39;</span></span>
+<span id="cb39-2"><a href="kiêu-dư-liêu.html#cb39-2" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<pre class="python_output"><code>Ob10101</code></pre>
+</div>
+<div id="kiêu-dư-liêu-chuôi-ky-tư-string-trong-python" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Kiểu dữ liệu chuỗi ký tự (string) trong Python<a href="kiêu-dư-liêu.html#kiêu-dư-liêu-chuôi-ky-tư-string-trong-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Các kiểu dữ liệu chuỗi trong Python được đặt trong dấu ngoặc kép đơn hoặc ngoặc kép. Python sẽ coi các lệnh trích dẫn đơn và kép như nhau, ví dụ như <code>"Hello"</code> tương đương với <code>'Hello'</code></p>
+<p>Gán chuỗi cho một biến</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="kiêu-dư-liêu.html#cb41-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Phạm Xuân Bách&quot;</span></span>
+<span id="cb41-2"><a href="kiêu-dư-liêu.html#cb41-2" tabindex="-1"></a><span class="bu">print</span>(name)</span></code></pre></div>
+<pre class="python_output"><code>Phạm Xuân Bách</code></pre>
+<p>Chúng ta có thể khai báo chuỗi bằng nhiều dòng khác nhau, dùng ba dấu nháy kép hoặc ba dấu nháy đơn</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="kiêu-dư-liêu.html#cb43-1" tabindex="-1"></a>str1 <span class="op">=</span> <span class="st">&quot;&quot;&quot;Hôm nay trời nắng chang chang</span></span>
+<span id="cb43-2"><a href="kiêu-dư-liêu.html#cb43-2" tabindex="-1"></a><span class="st">mèo con đi học chẳng mang thứ gì</span></span>
+<span id="cb43-3"><a href="kiêu-dư-liêu.html#cb43-3" tabindex="-1"></a><span class="st">chỉ mang một chiếc bút chì.</span></span>
+<span id="cb43-4"><a href="kiêu-dư-liêu.html#cb43-4" tabindex="-1"></a><span class="st">Và mang một mẩu bánh mì con con</span></span>
+<span id="cb43-5"><a href="kiêu-dư-liêu.html#cb43-5" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb43-6"><a href="kiêu-dư-liêu.html#cb43-6" tabindex="-1"></a><span class="bu">print</span>(str1)</span></code></pre></div>
+<pre class="python_output"><code>Hôm nay trời nắng chang chang
+mèo con đi học chẳng mang thứ gì
+chỉ mang một chiếc bút chì.
+Và mang một mẩu bánh mì con con</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="kiêu-dư-liêu.html#cb45-1" tabindex="-1"></a>str2 <span class="op">=</span> <span class="st">&#39;&#39;&#39;Hôm nay trời nắng chang chang</span></span>
+<span id="cb45-2"><a href="kiêu-dư-liêu.html#cb45-2" tabindex="-1"></a><span class="st">mèo con đi học chẳng mang thứ gì</span></span>
+<span id="cb45-3"><a href="kiêu-dư-liêu.html#cb45-3" tabindex="-1"></a><span class="st">chỉ mang một chiếc bút chì.</span></span>
+<span id="cb45-4"><a href="kiêu-dư-liêu.html#cb45-4" tabindex="-1"></a><span class="st">Và mang một mẩu bánh mì con con</span></span>
+<span id="cb45-5"><a href="kiêu-dư-liêu.html#cb45-5" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb45-6"><a href="kiêu-dư-liêu.html#cb45-6" tabindex="-1"></a><span class="bu">print</span>(str2)</span></code></pre></div>
+<pre class="python_output"><code>Hôm nay trời nắng chang chang
+mèo con đi học chẳng mang thứ gì
+chỉ mang một chiếc bút chì.
+Và mang một mẩu bánh mì con con</code></pre>
+<p>Chúng ta cũng có thể nhập chuỗi với các giá trị xuống dòng bằng kí tự <code>\n</code></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="kiêu-dư-liêu.html#cb47-1" tabindex="-1"></a>str3 <span class="op">=</span> <span class="st">&quot;Ví Dụ xuống dòng </span><span class="ch">\n</span><span class="st">Xuống dòng 2&quot;</span></span>
+<span id="cb47-2"><a href="kiêu-dư-liêu.html#cb47-2" tabindex="-1"></a><span class="bu">print</span>(str3)</span></code></pre></div>
+<pre class="python_output"><code>Ví Dụ xuống dòng 
+Xuống dòng 2</code></pre>
+<p>Hoặc chỉ định khoảng cách tab bằng <code>\t</code></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="kiêu-dư-liêu.html#cb49-1" tabindex="-1"></a>str4 <span class="op">=</span> <span class="st">&quot;Ví Dụ tab </span><span class="ch">\t</span><span class="st"> phần 1 </span><span class="ch">\t</span><span class="st"> phần 2&quot;</span></span>
+<span id="cb49-2"><a href="kiêu-dư-liêu.html#cb49-2" tabindex="-1"></a><span class="bu">print</span>(str4)</span></code></pre></div>
+<pre class="python_output"><code>Ví Dụ tab      phần 1     phần 2</code></pre>
+</div>
+<div id="kiêu-dư-liêu-boolean" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Kiểu dữ liệu Boolean<a href="kiêu-dư-liêu.html#kiêu-dư-liêu-boolean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kiểu dữ liệu Boolean là kiểu dữ liệu chứa một trong hai giá trị
+- <code>True</code> - có nghĩa là đúng
+- <code>False</code> - có nghĩa là sai</p>
+<p>Ví dụ</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="kiêu-dư-liêu.html#cb51-1" tabindex="-1"></a>is_male <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb51-2"><a href="kiêu-dư-liêu.html#cb51-2" tabindex="-1"></a><span class="bu">print</span>(is_male)</span>
+<span id="cb51-3"><a href="kiêu-dư-liêu.html#cb51-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(is_male))</span></code></pre></div>
+<pre class="python_output"><code>True
+&lt;class &#39;bool&#39;&gt;</code></pre>
+</div>
+<div id="ep-kiêu-dư-liêu" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Ép kiểu dữ liệu<a href="kiêu-dư-liêu.html#ep-kiêu-dư-liêu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Đôi khi chúng ta muốn chuyển đổi kiểu cho biến, chúng ta có thể áp dụng phương pháp ép kiểu trong Python. Để ép kiểu dữ liệu từ kiểu này sang kiểu khác, ta dùng hàm khởi tạo của python</p>
+<ul>
+<li><p><code>int()</code>: Chuyển đổi một số <code>float</code> sang số nguyên, chuỗi kí tự chứa các kí tự số sang số nguyên</p></li>
+<li><p><code>float()</code>: Chuyển số <code>int</code> sang số thập phân, chuỗi kí tự chưa các kí tự số sang số thập phân</p></li>
+<li><p><code>str()</code>: Chuyển các kiểu dữ liệu như số nguyên, số thập phân sang chuỗi</p></li>
+</ul>
+<p>Ví dụ vì vấn đề nhập liệu, mặc dù gần như toàn bộ cột dữ liệu có giá trị float như <code>1.2</code>, <code>1.3</code>, nhưng người nhập liệu nhập sai dấu <code>.</code> thành dấu <code>,</code>(ví dụ <code>1.2</code> bị nhập thành <code>1,2</code>) nên cột đó được nhận diện là <code>string</code>. Chúng ta sẽ xử lý string từ <code>1,2</code> sang <code>1.2</code> bằng phương thức <code>.replace()</code> sẽ được đề cập sau. Sau khi xử lý xong, chúng ta sẽ ép kiểu về <code>float</code>.</p>
+<div id="ep-kiêu-sang-int" class="section level4 hasAnchor" number="2.3.4.1">
+<h4><span class="header-section-number">2.3.4.1</span> Ép kiểu sang <code>int</code><a href="kiêu-dư-liêu.html#ep-kiêu-sang-int" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Khi chuyển float sang int, kết quả trả về là phần nguyên của số đó.
+Ví dụ</li>
+</ul>
+<p>Ép kiểu số dương</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="kiêu-dư-liêu.html#cb53-1" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">int</span>(<span class="fl">2.0</span>)</span>
+<span id="cb53-2"><a href="kiêu-dư-liêu.html#cb53-2" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<pre class="python_output"><code>2</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="kiêu-dư-liêu.html#cb55-1" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">int</span>(<span class="fl">2.5</span>)</span>
+<span id="cb55-2"><a href="kiêu-dư-liêu.html#cb55-2" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<pre class="python_output"><code>2</code></pre>
+<p>Ép kiểu số âm</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="kiêu-dư-liêu.html#cb57-1" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">int</span>(<span class="op">-</span><span class="fl">0.5</span>)</span>
+<span id="cb57-2"><a href="kiêu-dư-liêu.html#cb57-2" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<ul>
+<li>Chuyển từ <code>str</code> sang <code>int</code></li>
+</ul>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="kiêu-dư-liêu.html#cb58-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&quot;2&quot;</span></span>
+<span id="cb58-2"><a href="kiêu-dư-liêu.html#cb58-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">int</span>(a))</span></code></pre></div>
+<pre class="python_output"><code>2</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="kiêu-dư-liêu.html#cb60-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&quot;-2&quot;</span></span>
+<span id="cb60-2"><a href="kiêu-dư-liêu.html#cb60-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">int</span>(a))</span></code></pre></div>
+<pre class="python_output"><code>-2</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="khai-báo-biến.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bai-tâp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/robjhyndman/fpp2/edit/master/posts/02-Python.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
