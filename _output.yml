@@ -13,14 +13,14 @@ bookdown::gitbook:
   fig_height: 5.3
   fig_width: 8.5
   edit: null
-    download: no
-    fontsettings:
-      theme: white
-      family: Merriweather
-      size: 4
-    sharing:
-      github: yes
-      facebook: yes
+  download: no
+  fontsettings:
+    theme: white
+    family: Merriweather
+    size: 4
+  sharing:
+    github: yes
+    facebook: yes
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
