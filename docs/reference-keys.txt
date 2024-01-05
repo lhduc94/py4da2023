@@ -27,6 +27,10 @@ set
 tuple
 dictionary
 chuỗi
+các-phương-thức-trên-dữ-liệu-datetime
+if-else
+vòng-lặp---for
+function
 bai-tâp
 tong_n_so
 giai_thua

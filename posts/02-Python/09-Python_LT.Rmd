@@ -647,4 +647,313 @@ print("Dictionary sau khi thay đổi điểm:", student_info)
 
 #### Chuỗi
 
-1. Tạo một chuỗi chứa tên `John`  và in ra ký tự đầu tiên và cuối cùng trong chuỗi.
+1. Tạo biến `my_name` với giá trị là một chuỗi chứa họ và tên theo thứ tự `first_name` + `last_name`  và in ra ký tự đầu tiên và cuối cùng trong chuỗi. Đếm số ký tự `my_name`
+3. Chuyển đổi chuỗi trên thành chuỗi in hoa và in ra kết quả. Sau đó thay `o` thành `x` trong chuỗi `John` để được `Jxhn`
+4. Với biến `age` = `25`, `grade` = `A` và in ra 2 chuỗi dưới đây sử dụng f-string.
+`Tôi đã 25 tuổi` và `Tên John, Điểm A`
+
+
+```python
+# 1
+first_name = "Anh"
+last_name = "Pham"
+my_name = __
+
+first_char = __
+last_char = __
+# đếm số ký tự
+len_char = __
+print(f"Ký tự đầu tiên: {first_char}, Ký tự cuối cùng: {last_char}. Số ký tự là {len_char}")
+
+# 2
+uppercase_name = __
+print(f"Chuỗi in hoa: {uppercase_name}")
+
+modified_name =__
+print(f"Chuỗi sau khi thay thế: {modified_name}")
+
+# 3
+age = 25
+print(__) #Tôi đã 25 tuổi
+
+# 4
+grade = 'A'
+formatted_string =  __#Tên John, Điểm A sử dụng .format()
+print(formatted_string)
+
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+#1
+first_name = "Anh"
+last_name = "Pham"
+my_name = first_name + " " + last_name
+
+first_char = my_name[0]
+last_char = my_name[-1]
+len_char = len(my_name)
+print(f"Ký tự đầu tiên: {first_char}, Ký tự cuối cùng: {last_char}. Số ký tự là {len_char}")
+
+# 2
+uppercase_name = my_name.upper()
+print(f"Chuỗi in hoa: {uppercase_name}")
+
+# 3
+modified_name = my_name.replace('a', 'x')
+print(f"Chuỗi sau khi thay thế: {modified_name}")
+
+# 4
+age = 25
+print(f"Tôi đã {age} tuổi.")
+
+# 5
+grade = 'A'
+formatted_string = "Tên: {}, Điểm: {}".format(my_name, grade)
+print(formatted_string)
+
+```
+</p></details>
+
+### Các phương thức trên dữ liệu datetime​
+
+1. In ra ngày hiện tại. Ví dụ như `2024-01-05`
+2. Cho biến `specific_date` ở dạng datetime. Chuyển thành str với format `yyyymmdd`
+3. Tính khoảng cách thời gian giữa hai ngày và in ra số ngày chênh lệch.
+
+
+```python
+from datetime import datetime
+#1
+current_date = __
+print(f"Ngày hiện tại: {current_date}")
+print(type(current_date))
+
+#2
+specific_date = datetime(2022, 6, 30, 15, 30)
+yyyymmdd_date = __
+print(f"Thời gian yyyymmdd: {yyyymmdd_date}") #20220630
+
+#3
+date1 = datetime(2022, 1, 1)
+date2 = datetime(2022, 12, 31)
+days_difference = __
+print(f"Số ngày chênh lệch: {days_difference}")
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+from datetime import datetime
+
+#1
+current_time = datetime.now()
+current_date = current_time.date()
+print(f"Ngày hiện tại: {current_date}")
+print(type(current_date))
+
+#2
+specific_date = datetime(2022, 6, 30, 15, 30)
+yyyymmdd_date = specific_date.strftime('%Y%m%d')
+print(f"Thời gian yyyymmdd: {yyyymmdd_date}")
+
+#3
+date1 = datetime(2022, 1, 1)
+date2 = datetime(2022, 12, 31)
+time_difference = date2 - date1
+days_difference = time_difference.days
+print(f"Số ngày chênh lệch: {days_difference}")
+
+```
+
+</p></details>
+
+### If Else
+
+Viết một chương trình kiểm tra xem một số nhập từ người dùng `user_number`
+
+1. Nếu là số chẵn, in ra chuỗi: Số `user_number` là số chẵn
+
+2. Nếu là số lẻ, in ra chuỗi: Số `user_number` là số lẻ
+
+3. Nếu là số 0, in ra chuỗi: `bạn vừa nhập vào số 0`
+
+Ví dụ nếu người dùng nhập vào số 2 thì chương trình sẽ in ra `Số 2 là số chẵn`
+
+
+```python
+# Bài 59
+user_number = int(input("Nhập một số nguyên: "))
+if user_number % __:
+    print(f"Số {user_number} là số chẵn.")
+elif user_number __:
+    print(f"Bạn vừa nhập vào số 0")
+else:
+    print(f"Số {user_number} là số lẻ.")
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+# Bài 59
+user_number = int(input("Nhập một số nguyên: "))
+if user_number % 2 == 0:
+    print(f"Số {user_number} là số chẵn.")
+elif user_number == 0:
+    print(f"Bạn vừa nhập vào số 0")
+else:
+    print(f"Số {user_number} là số lẻ.")
+```
+
+</p></details>
+
+### Vòng Lặp - for
+
+1. Sử dụng hàm range() và vòng for để in ra số chẵn từ 0 đến 20 (bao gồm cả số 0 và 20)
+2. Tính tổng các số chẵn từ 0 đến 20 sử dụng vòng for
+3. Sử dụng vòng lặp `for` in ra các số chẵn từ 0 đến 20, nhưng bỏ qua các số chia hết cho 7 và dừng vòng lặp khi đến số 18
+
+
+```python
+my_range = range(_,_,_)
+
+# 1
+for i in __:
+    print(i)
+
+# 2
+sum_result = 0
+for i in __:
+    sum_result __ __
+print(f"Tổng các số chẵn từ 0 đến 20 là: {sum_result}")
+
+# 3
+for i in __:
+    if __:
+      continue
+    elif __:
+      break
+    print(i)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+my_range = range(0, 21, 2)
+
+#1
+for i in my_range:
+    print(i)
+
+#2
+sum_result = 0
+for i in my_range:
+    sum_result += i
+print(f"Tổng các số chẵn từ 0 đến 20 là: {sum_result}")
+
+#3
+for i in my_range:
+    if i % 7 == 0:
+      continue
+    elif i ==18:
+      break
+    print(i)
+```
+
+</p></details>
+
+## Function
+
+1. Viết hàm tính diện tích hình thang (trapezoid)
+
+Công thức diện tích hình thang: $\frac{1}{2}$ * chiều cao * đáy 1 * đáy 2
+2. Viết hàm `filter_numbers(x)` nhận vào 1 list `x` và trả về 1 list gồm các phần tử là số (int, float) của `x`
+
+```python
+def calculate_trapezoid_area(base1, base2, height):
+    """
+    Tính diện tích hình thang
+
+    Parameters:
+    - base1: Chiều dài đáy 1.
+    - base2: Chiều dài đáy 2.
+    - height: Chiều cao giữa 2 đáy.
+
+    Returns:
+    - area: Diện tích của hình thang.
+    """
+    area = __
+    return area
+
+#Test:
+base1_length = 2.4
+base2_length = 3.6
+trapezoid_height = 4
+
+trapezoid_area = calculate_trapezoid_area(base1_length, base2_length, trapezoid_height)
+print("The area of the trapezoid is:", trapezoid_area)
+#Kết quả in ra: The area of the trapezoid is: 12.0
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+def calculate_trapezium_area(base1, base2, height):
+    """
+    Tính diện tích hình thang
+
+    Parameters:
+    - base1: Chiều dài đáy 1.
+    - base2: Chiều dài đáy 2.
+    - height: Chiều cao giữa 2 đáy.
+
+    Returns:
+    - area: Diện tích của hình thang.
+    """
+    area = 0.5 * (base1 + base2) * height
+    return area
+
+#Test:
+base1_length = float(2.4)
+base2_length = float(3.6)
+trapezium_height = float(4)
+
+trapezium_area = calculate_trapezium_area(base1_length, base2_length, trapezium_height)
+print("The area of the trapezium is:", trapezium_area)
+#Kết quả in ra: The area of the trapezium is: 12.0
+```
+
+
+```python
+def filter_numbers(x):
+
+  return
+
+#Test
+result = filter_numbers([1, 2, 'A', True, -1, -2.5, 7, [1, 2], False])
+print(result)
+# Kết quả in ra: [1, 2, -1, -2.5, 7]
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+def filter_numbers(x):
+    num_list=[]
+    for i in x:
+      if type(i) == int or type(i) == float:
+        num_list.append(i)
+    return num_list
+
+result = filter_numbers([1, 2, 'A', True, -1, -2.5, 7, [1, 2], False])
+print(result)
+```
+
+</p></details>
