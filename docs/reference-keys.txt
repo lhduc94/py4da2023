@@ -37,6 +37,8 @@ giai_thua
 chia_cho_5
 parse_string_01
 atm
+cong_thuc_01
+cong_thuc_02
 ucln
 bcnn
 rut_gon_da_thuc_01

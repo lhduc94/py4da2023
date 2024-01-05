@@ -179,6 +179,97 @@ def ATM(money):
 </p></details>
 ---
 
+### CONG_THUC_01
+
+
+Chúng ta hay gặp công thức như minh họa (công thức tính trung bình)
+
+$ \Large \frac{1}{n}\sum_{i=1}^{n}y_i = \frac{1}{n}(y_1 + y_2 + ... + y_n)$ 
+
+Yêu cầu viết một hàm tính arithmetic mean theo công thức trên, Với kí hiệu $\sum_{i=1}^{n}$ là tổng một cái gì đó từ 1 đến n. $y_i$ là giá trị của danh sách $Y$ tại vị trí thứ $i$
+
+Lưu ý: Python index bắt đầu từ 0, nhưng trong toán học sẽ bắt đầu từ 1
+
+```python
+def calculate_arithmetic_mean(Y)
+    answer = 0
+    n = __
+    for i in range(__):
+        ..
+    return answer
+```
+
+
+**Test case**
+
+|Ví dụ|Kết quả|
+|:--|:----------|
+|`calculate_arithmetic_mean([1, 2, 3, 4, 5])`|3.0|
+|`calculate_arithmetic_mean([2, 4, 6, 8])`|5.0|
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+def calculate_arithmetic_mean(Y):
+    answer = 0
+    n = len(Y)
+    for i in range(n):
+        answer += Y[i]
+    answer = answer / n
+    return answer
+```
+<p></details>
+
+--- 
+
+### CONG_THUC_02
+
+
+Một công thức tính trung bình khác  đó là trung bình hình học()
+
+$ \Large \left(\prod _{i=1}^{n}y_{i}\right)^{\frac {1}{n}}={\sqrt[{n}]{y_{1} \times y_{2} \times \cdots \times y_{n}}}$ 
+
+Yêu cầu viết một hàm tính geometric mean theo công thức trên, Với kí hiệu $\sum_{i=1}^{n}$ là tổng một cái gì đó từ 1 đến n. $Y_i$ là giá trị của danh sách tại vị trí thứ $i$
+
+Lưu ý: Python index bắt đầu từ 0, nhưng trong toán học sẽ bắt đầu từ 1
+
+Để tính lũy thừa của 1 số ta dùng hàm `pow()`.
+- Ví dụ để tính lũy thừa 3 của 2 ta dùng `pow(2, 3)`
+- Ví dụ để tính căn bậc 3 của 2 ta dùng `pow(2, 1/3)`
+```python
+def calculate_geometric_mean(Y)
+    answer = 1
+    n = __
+    for i in range(__):
+        ..
+    return answer
+```
+
+
+**Test case**
+
+|Ví dụ|Kết quả|
+|:--|:----------|
+|`calculate_geometric_mean([1, 2, 3, 4, 5])`|2.605171084697352|
+|`calculate_geometric_mean([2, 4, 6, 8])`|4.426727678801286|
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+def calculate_arithmetic_mean(Y):
+    answer = 0
+    n = len(Y)
+    for i in range(n):
+        answer += Y[i]
+    answer = answer / n
+    return answer
+```
+<p></details>
+
+---
+
 ### UCLN
 
 Viết hàm tìm Ước chung lớn nhất của hai số  nguyên dương `a`, `b`
