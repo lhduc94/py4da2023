@@ -234,7 +234,7 @@ $$
 \Large \left(\prod _{i=1}^{n}y_{i}\right)^{\frac {1}{n}}={\sqrt[{n}]{y_{1} \times y_{2} \times \cdots \times y_{n}}}
 $$ 
 
-Yêu cầu viết một hàm tính geometric mean theo công thức trên, Với kí hiệu $\sum_{i=1}^{n}$ là tổng một cái gì đó từ 1 đến n. $Y_i$ là giá trị của danh sách tại vị trí thứ $i$
+Yêu cầu viết một hàm tính geometric mean theo công thức trên.
 
 Lưu ý: Python index bắt đầu từ 0, nhưng trong toán học sẽ bắt đầu từ 1
 
