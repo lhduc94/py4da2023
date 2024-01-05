@@ -1,0 +1,87 @@
+## Ôn tập
+
+### [Khai báo biến](#khai-báo-biến)
+
+1. Khai báo một biến `tuoi` với giá trị là `25`
+
+2. In (print) ra biến `tuoi`
+
+3. Khai báo biến `can_nang`, `chieu_cao`, `quoc_tich` lần lượt là `50`, `170`, `"vietnam"` trong 1 dòng
+
+4. Sử dụng các biến trên, in ra câu sau `"Tôi có cân nặng là 50, chiều cao là 170 và quốc tịch vietnam"`
+
+5. Khai báo biến `bai_tho` với giá trị là bài thơ sau và in (print) biến sao cho mỗi câu thơ ở một dòng như dưới đây
+
+>Mơ khách đường xa, khách đường xa \
+>Áo em trắng quá nhìn không ra... \
+>Ở đây sương khói mờ nhân ảnh \
+>Ai biết tình ai có đậm đà? \
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+#1
+tuoi = 25
+#2
+print(tuoi)
+#3
+can_nang, chieu_cao, quoc_tich = 50, 170, 'vietnam'
+#4
+print('Tôi có cân nặng là', can_nang, ', chiều cao là', chieu_cao, 'và quốc tịch', quoc_tich)
+#5
+bai_tho = '''
+Mơ khách đường xa, khách đường xa
+Áo em trắng quá nhìn không ra...
+Ở đây sương khói mờ nhân ảnh
+Ai biết tình ai có đậm đà?
+'''
+print(bai_tho)
+```
+</p></details>
+
+---
+
+### [Kiểu và ép kiểu dữ liệu](#kiêu-dư-liêu)
+
+1. Kiểm tra kiểu dữ liệu của biến `is_number`,  `number`, `float_number`, `string_number` và in (print) biến
+2. Ép kiểu biến `number` từ int sang float và in (print) biến
+3. Ép kiểu biến `float_number` từ float sang int và in (print) biến
+4. Ép kiểu biến `string_number` từ str sang int và in (print) biến
+
+```python
+is_number = True
+__
+number = 10
+__
+float_number = 15.5
+__
+string_number = "25"
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+is_number = True
+print('Biến is_number có kiểu', type(is_number))
+# Ép kiểu từ int sang float và ngược lại
+number = 10
+print('Số nguyên:', number, 'với kiểu', type(number))
+number_float = float(number)
+print("Số nguyên sau khi ép kiểu thành số thực:", number_float, 'với kiểu', type(number_float))
+
+
+float_number = 15.5
+print('Số thực', float_number)
+int_number = int(float_number)
+print("Số thực sau khi ép kiểu thành số nguyên:", int_number, 'với kiểu', type(int_number))
+
+# Ép kiểu từ string sang int
+string_number = "25"
+print('Chuỗi', float_number, 'với kiểu', type(string_number))
+int_from_string = int(string_number)
+print("Số nguyên từ chuỗi:", int_from_string, 'với kiểu', type(int_from_string))
+```
+
+<p></details>

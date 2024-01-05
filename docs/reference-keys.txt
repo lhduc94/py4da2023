@@ -17,7 +17,15 @@ ep-kiêu-sang-string
 cac-toan-tư-trong-python
 toan-tư-sô-hoc
 toán-tử
+ôn-tâp
+khai-bao-biên
+kiểu-và-ép-kiểu-dữ-liệu
 bai-tâp
+tong_n_so
 giai_thua
 chia_cho_5
 parse_string_01
+atm
+ucln
+bcnn
+rut_gon_da_thuc_01
