@@ -20,6 +20,7 @@ toán-tử
 ôn-tâp
 khai-bao-biên
 kiểu-và-ép-kiểu-dữ-liệu
+toán-tử-1
 bai-tâp
 tong_n_so
 giai_thua

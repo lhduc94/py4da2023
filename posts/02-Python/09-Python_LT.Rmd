@@ -85,3 +85,123 @@ print("Số nguyên từ chuỗi:", int_from_string, 'với kiểu', type(int_fr
 ```
 
 <p></details>
+
+### Toán tử
+
+Với 2 biến a và b, thực hiện các phép toán sau và in ra kết quả
+
+1. Chia lấy phần nguyên
+2. Chia lấy phần dư
+3. Lũy thừa (mũ)
+4. So sánh 2 số có bằng nhau không
+    1. a có khác b không
+    2. a có lớn hơn b không
+5. Cộng 3vào giá trị biến a sử dụng toán tử += và in ra kết quả.
+6. Trừ 1 vào giá trị biến a sử dụng toán tử -= và in ra kết quả.
+7. Với 2 biến x và y, sử dụng toán tử or, and, not và in ra kết quả tương ứng
+
+```python
+a = 5
+b = 3
+
+# Chia lấy phần nguyên
+floor_division = __
+print("Phần nguyên của a chia b là:", floor_division)
+
+# Chia lấy phần dư
+remainder = __
+print("Phần dư của a chia b là:", remainder)
+
+# Lũy thừa
+power_result = __
+print("Lũy thừa của a mũ b là:", power_result)
+
+# So sánh bằng
+result = __
+print("a bằng b:", result)
+
+# So sánh khác nhau
+result = __
+print("a khác b:", result)
+
+# So sánh lớn hơn
+result = __
+print("a lớn hơn b:", result)
+
+# Gán và cộng +=
+__
+print("a sau khi thêm 3:", a)
+
+# Gán và trừ +-
+__ 
+print("a sau khi trừ 4:", a)
+
+x = True
+y = False
+
+# Toán tử AND
+result = __ and __
+print("Kết quả của x AND y là:", result)
+
+# Toán tử OR
+result = __ or __
+print("Kết quả của x OR y là:", result)
+
+# Toán tử NOT
+result = not 
+print("Kết quả của NOT x là:", result)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+```python
+a = 5
+b = 3
+# Chia lấy phần nguyên
+floor_division = a // b
+print("Phần nguyên của a chia b là:", floor_division)
+
+# Chia lấy phần dư
+remainder = a % b
+print("Phần dư của a chia b là:", remainder)
+
+# Lũy thừa
+power_result = a ** b
+print("Lũy thừa của a mũ b là:", power_result)
+
+# So sánh bằng
+result = a == b
+print("a bằng b:", result)
+
+# So sánh khác nhau
+result = a != b
+print("a khác b:", result)
+
+# So sánh lớn hơn
+result = a > b
+print("a lớn hơn b:", result)
+
+# Gán và cộng +=
+a += 3  # Tương đương với a = a + 3
+print("a sau khi thêm 3:", a)
+
+# Gán và trừ +-
+a -= 4  # Tương đương với a = a - 4
+print("a sau khi trừ 4:", a)
+
+x = True
+y = False
+
+# Toán tử AND
+result = x and y
+print("Kết quả của x AND y là:", result)
+
+# Toán tử OR
+result = x or y
+print("Kết quả của x OR y là:", result)
+
+# Toán tử NOT
+result = not x
+print("Kết quả của NOT x là:", result)
+```
+</p> <details>
