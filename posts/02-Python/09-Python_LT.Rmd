@@ -154,6 +154,7 @@ print("Kết quả của NOT x là:", result)
 
 <details><summary><b>Lời giải</b></summary>
 <p>
+
 ```python
 a = 5
 b = 3
@@ -205,3 +206,445 @@ result = not x
 print("Kết quả của NOT x là:", result)
 ```
 </p> <details>
+
+
+1. Khởi tạo 2 biến `num1` và `num2` với 2 giá trị số nguyên (int) bất kì
+2. Tính tổng và tích giá trị của 2 biến `num1` và `num2`
+3. Kiểm tra xem giá tổng và tích của 2 biến có chia hết cho 3 và 5 hay không
+
+
+```python
+#Khởi tạo 2 biến num1 và num2
+
+#Tính tổng
+sum_result =
+
+#Tính tích
+product_result =
+
+print(f"Tổng là: {sum_result}, Tích là: {product_result}")
+
+# Kiểm tra xem tổng và tích vừa tính có chia hết cho 3 và 5
+
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+# Bài 19
+num1 = 3
+num2 = 4
+sum_result = num1 + num2
+product_result = num1 * num2
+print(f"Tổng là: {sum_result}, Tích là: {product_result}")
+
+# Bài 20
+check_number = sum_result
+is_divisible = (check_number % 3 == 0) and (check_number % 5 == 0)
+print(f"Số {check_number} {'chia hết cho 3 và 5' if is_divisible else 'không chia hết cho 3 và 5'}")
+```
+
+</p></details>
+
+
+Giả sử tỷ giá 1 usd đổi được 24 vnd
+Viết chương trình với
+
+input là số usd nhập vào từ bàn phím
+output là số vnd tương ứng
+Sử dụng input() để giá trị nhập từ bàn phím
+
+`a = input()` khi chạy câu này, a sẽ được gán với giá trị được nhập vào từ bàn phím
+
+```python
+a = input()
+print(type(a))
+```
+
+Hãy thử nhập từ bàn phím số tiền USD và đổi sang VND
+
+```python
+USD = int(input("Input USD:"))
+VND = __ * __
+print(__, "USD = ", __, "VND")
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+USD = int(input("Input USD: "))
+VND = USD*24
+print(USD, "USD = ", VND, "VND")
+```
+
+<p></details>
+
+### Cấu trúc dữ liệu cơ bản
+
+#### List
+
+cho List my_list
+
+1.  Truy cập phần tử đầu tiên
+2.  Truy cập phần tử cuối cùng
+3.  Lấy ra list [2,3,4] từ my_list
+4.  Lấy ra những phần tử có index 0 và chẵn: 0, 2, 4
+
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Truy cập phần tử đầu tiên
+first_element =
+print("Phần tử đầu tiên của list là:", first_element)
+
+# Truy cập phần tử cuối cùng
+last_element =
+print("Phần tử cuối cùng của list là:", last_element)
+
+# Truy cập một phần của list
+sliced_elements =   # Lấy ra list [2,3,4] từ my_list
+print("sliced list:", sliced_elements)
+
+#Lấy phần tử index chẵn
+new_list =
+print("new list:" new_list)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Truy cập phần tử đầu tiên
+first_element = my_list[0]
+print("Phần tử đầu tiên của list là:", first_element)
+
+# Truy cập phần tử cuối cùng
+last_element = my_list[-1]
+print("Phần tử cuối cùng của list là:", last_element)
+
+# Truy cập một phần của list
+sliced_elements = my_list[1:4]  # Lấy ra list [2,3,4] từ my_list
+print("sliced list:", sliced_elements)
+
+#Lấy phần tử index chẵn
+new_list = my_list[::2]
+print("new list:", new_list)
+```
+
+</p></details>
+
+1. Thay đổi giá trị của phần 3 thành 10
+2. Kiểm tra xem giá trị 3 có tồn tại trong list không
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Thay đổi giá trị của phần tử tại index 2
+__
+print("List sau khi thay đổi giá trị của phần tử tại index 2:", my_list)
+
+# Kiểm tra xem giá trị 3 có tồn tại trong list không
+print("Giá trị 3 có tồn tại trong list không:", ____)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Thay đổi giá trị của phần tử tại index 2
+my_list[2] = 10
+print("List sau khi thay đổi giá trị của phần tử tại index 2:", my_list)
+# Kiểm tra xem giá trị 3 có tồn tại trong list không
+print("Giá trị 3 có tồn tại trong list không:", 3 in my_list)
+
+```
+
+1. Thêm một phần tử vào cuối list
+2. Xóa phần tử tại index=2
+3. Nối `list2` vào `list1`
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Thêm một phần tử vào cuối list
+__
+print("List sau khi thêm phần tử mới:", my_list)
+
+# Xóa phần tử tại index 2
+__
+print("List sau khi xóa phần tử tại index 2:", my_list)
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+# Nối list2 vào list1
+__
+print("List sau khi nối:", list1)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Thêm một phần tử vào cuối list
+my_list.append(6)
+print("List sau khi thêm phần tử mới:", my_list)
+
+# Xóa phần tử tại index 2
+del my_list[2]
+print("List sau khi xóa phần tử tại index 2:", my_list)
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+# Nối list2 vào list1
+list1.extend(list2)
+print("List sau khi nối:", list1)
+```
+
+</p></details>
+
+(Optional) Sử dùng hàm có sẵn để:
+
+1. Đếm số lần xuất hiện của một giá trị trong list
+2. Sắp xếp list
+3. Đảo ngược thứ tự của list
+
+```python
+my_list = [5,5,3,2,3,1]
+# Đếm số lần xuất hiện của giá trị 3 trong list
+count_3 = __
+print("Số lần xuất hiện của giá trị 3 trong list:", count_3)
+
+# Sắp xếp list
+my_list = __
+print("List sau khi sắp xếp:", my_list)
+
+# Đảo ngược thứ tự của list 
+my_list = __
+print("List sau khi đảo ngược:", my_list)
+```
+
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+my_list = [5,5,3,2,3,1]
+# Đếm số lần xuất hiện của một giá trị trong list
+count_3 = my_list.count(3)
+print("Số lần xuất hiện của giá trị 3 trong list:", count_3)
+
+# Sắp xếp list
+my_list.sort()
+print("List sau khi sắp xếp:", my_list)
+
+# Đảo ngược thứ tự của list
+my_list.reverse()
+print("List sau khi đảo ngược:", my_list)
+```
+
+</p></details>
+
+
+#### Set
+
+1. Tạo một set chứa các môn học bạn học trong một kỳ học. In ra set đó. Kiểm tra kiểu dữ liệu của set vừa tạo
+
+2. Khởi tạo một biến với giá trị là tên một môn học khác. Thêm môn học mới vào set trên và in ra set sau khi thêm.
+
+
+```python
+# 1.
+# Tạo set
+subjects_set =
+
+# In ra set
+print(__)
+# Kiểm tra kiểu dữ liệu của set. <class 'set'>
+print(__)
+
+# 2.
+#Khởi tạo biến với giá trị là môn học khác
+new_subject = __
+
+# Thêm môn học trên vào set subjects_set và xóa một môn học bất kì
+subjects_set.__(__)
+subjects_set.__(__)
+
+# In ra set sau khi thêm
+print("Danh sách môn học sau khi thêm:", subjects_set)
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+# Bài 32
+subjects_set = {"Toán", "Văn", "Anh", "Lý", "Hóa"}
+print("Danh sách môn học:", subjects_set)
+print(type(subjects_set))
+
+# Bài 33
+new_subject = "Âm nhạc"
+subjects_set.add(new_subject)
+subjects_set.remove("Văn")
+print("Danh sách môn học sau khi thêm:", subjects_set)
+```
+
+</p></details>
+
+Cho 2 set `set1` và `set2`
+1. Tìm phần tử chung của 2 set
+2. Tạo một set gồm tất cả phần tử của 2 set
+
+Cho 2 set `set5` và `set6`. Tìm những kí tự nằm trong `set5` nhưng không nằm trong `set6`
+
+
+```python
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+
+#In ra phần tử chung
+intersection_result = __
+print(f"Phép giao của hai set: {intersection_result}")
+
+#In ra set gồm tất cả phần tử
+union_result = __
+print(f"Phép hợp của hai set: {union_result}")
+
+set5 = set("abcde")
+set6 = set("cdefg")
+#In ra kí tự nằm trong set5 mà không trong set6
+difference_result = __
+print(f"Phép hiệu của hai set: {difference_result}")
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+# Bài 36
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+intersection_result = set1.intersection(set2)
+print(f"Phép giao của hai set: {intersection_result}")
+
+# Bài 37
+set3 = {1, 2, 3, 4, 5, 6}
+set4 = {4, 5, 6, 7, 8}
+union_result = set3.union(set4)
+print(f"Phép hợp của hai set: {union_result}")
+
+# Bài 38
+set5 = set("abcde")
+set6 = set("cdefg")
+difference_result = set5.difference(set6)
+print(f"Phép hiệu của hai set: {difference_result}")
+
+```
+
+</p></details>
+
+
+#### Tuple
+
+1. Tạo tuple `subjects_tuple` với 3 môn học `Toan`, `Van`, `Anh`
+2. Không khai báo lại 3 môn trên, tạo tuple mới ` new_subject_tuple` với 3 môn học trong tuple `subjects_tuple` và thêm môn `Ly`
+
+```python
+# Bài 41
+subjects_tuple = (__, __, __)
+number_of_elements = len(__)
+print(f"Số lượng phần tử trong tuple là: {number_of_elements}")
+
+# Bài 42
+new_subject_tuple  = subjects_tuple + (__,)
+print("Tuple sau khi thêm môn học mới:", new_subject_tuple )
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+# Bài 41
+subjects_tuple = ("Toán", "Văn", "Anh")
+number_of_elements = len(subjects_tuple)
+print(f"Số lượng phần tử trong tuple là: {number_of_elements}")
+
+# Bài 42
+new_subject_tuple  = subjects_tuple + ("Lý",)
+print("Tuple sau khi thêm môn học mới:", new_subject_tuple )
+```
+
+</p></details>
+
+#### Dictionary
+
+1. Một sinh viên có thông tin như sau `tên` là `Nguyễn Văn A`, `tuổi` `20`, `điểm` `8.5`
+
+2. Tạo một dictionary chứa thông tin về một sinh viên với các thông tin như "tên", "tuổi", "điểm". In ra tên của sinh viên đó.
+
+3. Thêm số điện thoại 0123456789 vào thông tin
+
+4. Xóa thông tin về tuổi
+
+5. Thay đổi điểm thành 9.0
+
+
+```python
+# 1
+student_info = {__:__, __:__, __:__}
+# 2
+student_name = student_info[__]
+print(f"Tên của sinh viên là: {student_name}")
+#3. Thêm số điện thoại 0123456789
+student_info[__] = __
+print("Dictionary sau khi thêm số điện thoại:", student_info)
+#4. Xóa thông tin về tuổi
+del __[__]
+print("Dictionary sau khi xóa thông tin tuổi:", student_info)
+#5. Thay đổi điểm thành 9.0
+student_info[__] = __
+print("Dictionary sau khi thay đổi điểm:", student_info)
+
+```
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+#1
+student_info = {"tên": "Nguyễn Văn A", "tuổi": 20, "điểm": 8.5}
+
+#2
+student_name = student_info["tên"]
+print(f"Tên của sinh viên là: {student_name}")
+
+#3
+student_info["số điện thoại"] = "0123456789"
+print("Dictionary sau khi thêm số điện thoại:", student_info)
+
+#4
+del student_info["tuổi"]
+print("Dictionary sau khi xóa thông tin tuổi:", student_info)
+
+#5
+student_info["điểm"] = 9.0
+print("Dictionary sau khi thay đổi điểm:", student_info)
+```
+
+</p></details>
+
+#### Chuỗi
+
+1. Tạo một chuỗi chứa tên `John`  và in ra ký tự đầu tiên và cuối cùng trong chuỗi.

@@ -21,6 +21,12 @@ toán-tử
 khai-bao-biên
 kiểu-và-ép-kiểu-dữ-liệu
 toán-tử-1
+cấu-trúc-dữ-liệu-cơ-bản
+list
+set
+tuple
+dictionary
+chuỗi
 bai-tâp
 tong_n_so
 giai_thua
