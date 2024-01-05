@@ -1370,12 +1370,8 @@ Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</c
 <h3><span class="header-section-number">2.5.6</span> UCLN<a href="lập-trình-với-ngôn-ngữ-python.html#ucln" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Viết hàm tìm Ước chung lớn nhất của hai số nguyên dương <code>a</code>, <code>b</code></p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-1" tabindex="-1"></a><span class="kw">def</span> findUCLN(a, b):</span>
-<span id="cb122-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-2" tabindex="-1"></a>    <span class="cf">while</span> b <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb122-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-3" tabindex="-1"></a>        temp <span class="op">=</span> b</span>
-<span id="cb122-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-4" tabindex="-1"></a>        b <span class="op">=</span> a <span class="op">%</span> b</span>
-<span id="cb122-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-5" tabindex="-1"></a>        a <span class="op">=</span> temp</span>
-<span id="cb122-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-6" tabindex="-1"></a>        <span class="co"># a, b = b, a % b</span></span>
-<span id="cb122-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-7" tabindex="-1"></a>    <span class="cf">return</span> a</span></code></pre></div>
+<span id="cb122-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-2" tabindex="-1"></a>    ..</span>
+<span id="cb122-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb122-3" tabindex="-1"></a>    <span class="cf">return</span> __</span></code></pre></div>
 <p>Test case:</p>
 <table>
 <thead>
@@ -1401,9 +1397,13 @@ Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</c
 <b>Lời giải</b>
 </summary>
 <p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-1" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb123-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-2" tabindex="-1"></a><span class="kw">def</span> findUCLN(a, b):</span>
-<span id="cb123-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-3" tabindex="-1"></a>    <span class="cf">return</span> math.gcd(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-1" tabindex="-1"></a><span class="kw">def</span> findUCLN(a, b):</span>
+<span id="cb123-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-2" tabindex="-1"></a>    <span class="cf">while</span> b <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb123-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-3" tabindex="-1"></a>        temp <span class="op">=</span> b</span>
+<span id="cb123-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-4" tabindex="-1"></a>        b <span class="op">=</span> a <span class="op">%</span> b</span>
+<span id="cb123-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-5" tabindex="-1"></a>        a <span class="op">=</span> temp</span>
+<span id="cb123-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-6" tabindex="-1"></a>        <span class="co"># a, b = b, a % b</span></span>
+<span id="cb123-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb123-7" tabindex="-1"></a>    <span class="cf">return</span> a</span></code></pre></div>
 </p>
 </details>
 <hr />

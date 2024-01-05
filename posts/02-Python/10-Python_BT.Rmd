@@ -186,12 +186,8 @@ Viết hàm tìm Ước chung lớn nhất của hai số  nguyên dươn
 
 ```python
 def findUCLN(a, b):
-    while b != 0:
-        temp = b
-        b = a % b
-        a = temp
-        # a, b = b, a % b
-    return a
+    ..
+    return __
 ```
 
 
@@ -209,9 +205,13 @@ Test case:
 <p>
 
 ```python
-import math
 def findUCLN(a, b):
-    return math.gcd(a, b)
+    while b != 0:
+        temp = b
+        b = a % b
+        a = temp
+        # a, b = b, a % b
+    return a
 ```
 </p></details>
 ---
