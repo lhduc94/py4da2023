@@ -760,14 +760,6 @@ ValueError: invalid literal for int() with base 10: &#39;2.5&#39;</code></pre>
 <p>Giả sử bạn đang code thuật toán cho máy ATM với một số tiền vô hạn.
 ATM có các đồng tiền với mệnh giá 50 20 10 5 2 1.
 Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</code> và trả ra số tờ tiền ít nhất</p>
-<p>Ví dụ 1
-Input : money=100
-Output: 2
-Giải thích: 100 chỉ cần 2 tờ mệnh giá 50</p>
-<p>Ví dụ 2:
-Input: money=121
-Output: 4
-Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-1" tabindex="-1"></a><span class="kw">def</span> ATM(money):</span>
 <span id="cb96-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-2" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb96-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-3" tabindex="-1"></a>    ..</span>
@@ -783,12 +775,12 @@ Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>parseString(money)</code></td>
-<td align="left">2 <br> 100 chỉ cần 2 tờ mệnh giá 50”</td>
+<td align="left"><code>ATM(100)</code></td>
+<td align="left">2 <br> Giải thích: 100 chỉ cần 2 tờ mệnh giá 50”</td>
 </tr>
 <tr class="even">
-<td align="left"><code>parseString("[-1, -2]")</code></td>
-<td align="left">[-1, -2]</td>
+<td align="left"><code>ATM(121)</code></td>
+<td align="left">4 <br> Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>parseString("[0]")</code></td>

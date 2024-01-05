@@ -185,15 +185,6 @@ Giả sử bạn đang code thuật toán cho máy ATM với một số t
 ATM có các đồng tiền với mệnh giá 50 20 10 5 2 1.
 Yêu cầu viết thuật toán nhận lệnh số tiền `money` và trả ra số tờ tiền ít nhất
 
-Ví dụ 1
-Input : money=100
-Output: 2
-Giải thích: 100 chỉ cần 2 tờ mệnh giá 50
-
-Ví dụ 2:
-Input: money=121
-Output: 4
-Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1
 
 ```python
 def ATM(money):
@@ -207,8 +198,8 @@ def ATM(money):
 
 |Ví dụ|Kết quả|
 |:--|:----------|
-|`parseString(money)`|2 <br> 100 chỉ cần 2 tờ mệnh giá 50"|
-|`parseString("[-1, -2]")`|[-1, -2]|
+|`ATM(100)`|2 <br> Giải thích: 100 chỉ cần 2 tờ mệnh giá 50"|
+|`ATM(121)`|4 <br> Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1|
 |`parseString("[0]")`|[0]|
 
 <details><summary><b>Lời giải</b></summary>
