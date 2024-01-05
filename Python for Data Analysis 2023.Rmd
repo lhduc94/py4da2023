@@ -635,12 +635,9 @@ print(type(c))
 
 <!--chapter:end:posts/02-Python/03-CacToanTu.Rmd-->
 
-
 ## Bài tập
 
 abc 
-
-
 ### GIAI_THUA
 
 Viết hàm tìm Giai thừa của một số `n` theo công thức
