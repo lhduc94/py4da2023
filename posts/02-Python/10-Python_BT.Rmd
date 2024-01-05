@@ -228,7 +228,7 @@ def calculate_arithmetic_mean(Y):
 ### CONG_THUC_02
 
 
-Một công thức tính trung bình khác  đó là trung bình hình học()
+Một công thức tính trung bình khác  đó là trung bình hình học
 
 $$ 
 \Large \left(\prod _{i=1}^{n}y_{i}\right)^{\frac {1}{n}}={\sqrt[{n}]{y_{1} \times y_{2} \times \cdots \times y_{n}}}
