@@ -1745,12 +1745,12 @@ Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</c
 <b>Lời giải</b>
 </summary>
 <p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-1" tabindex="-1"></a><span class="kw">def</span> calculate_arithmetic_mean(Y):</span>
-<span id="cb137-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-2" tabindex="-1"></a>    answer <span class="op">=</span> <span class="dv">0</span></span>
+<div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-1" tabindex="-1"></a><span class="kw">def</span> calculate_geometric_mean(Y):</span>
+<span id="cb137-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-2" tabindex="-1"></a>    answer <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb137-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-3" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(Y)</span>
 <span id="cb137-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-4" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb137-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-5" tabindex="-1"></a>        answer <span class="op">+=</span> Y[i]</span>
-<span id="cb137-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-6" tabindex="-1"></a>    answer <span class="op">=</span> answer <span class="op">/</span> n</span>
+<span id="cb137-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-5" tabindex="-1"></a>        answer <span class="op">*=</span> Y[i]</span>
+<span id="cb137-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-6" tabindex="-1"></a>    answer <span class="op">=</span> math.<span class="bu">pow</span>(answer, <span class="dv">1</span><span class="op">/</span>n)</span>
 <span id="cb137-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb137-7" tabindex="-1"></a>    <span class="cf">return</span> answer</span></code></pre></div>
 <p>
 </details>
