@@ -1,10 +1,6 @@
 
 ## Bài tập
 
-
-
----
-
 ### GIAI_THUA
 
 Viết hàm tìm Giai thừa của một số `n` theo công thức
