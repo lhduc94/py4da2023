@@ -200,7 +200,6 @@ def ATM(money):
 |:--|:----------|
 |`ATM(100)`|2 <br> Giải thích: 100 chỉ cần 2 tờ mệnh giá 50"|
 |`ATM(121)`|4 <br> Giải thích: 121 = 50 * 2 + 20 * 1 + 1 * 1|
-|`parseString("[0]")`|[0]|
 
 <details><summary><b>Lời giải</b></summary>
 <p>
