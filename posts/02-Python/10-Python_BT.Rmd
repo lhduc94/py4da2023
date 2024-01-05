@@ -207,7 +207,7 @@ def ATM(money):
 
 |Ví dụ|Kết quả|
 |:--|:----------|
-|`parseString(money)`|2 \\ 100 chỉ cần 2 tờ mệnh giá 50"|
+|`parseString(money)`|2 <br> 100 chỉ cần 2 tờ mệnh giá 50"|
 |`parseString("[-1, -2]")`|[-1, -2]|
 |`parseString("[0]")`|[0]|
 
