@@ -164,7 +164,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#toan-tư-sô-hoc"><i class="fa fa-check"></i><b>2.3.1</b> Toán tử số học</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#bai-tâp"><i class="fa fa-check"></i><b>2.4</b> Bài tập</a></li>
+<li class="chapter" data-level="2.4" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#bai-tâp"><i class="fa fa-check"></i><b>2.4</b> Bài tập</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#giai_thua"><i class="fa fa-check"></i><b>2.4.1</b> GIAI_THUA</a></li>
+<li class="chapter" data-level="2.4.2" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#chia_cho_5"><i class="fa fa-check"></i><b>2.4.2</b> CHIA_CHO_5</a></li>
+<li class="chapter" data-level="2.4.3" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#parse_string_01"><i class="fa fa-check"></i><b>2.4.3</b> PARSE_STRING_01</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
@@ -535,7 +540,141 @@ ValueError: invalid literal for int() with base 10: &#39;2.5&#39;</code></pre>
 </div>
 <div id="bai-tâp" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Bài tập<a href="lập-trình-với-ngôn-ngữ-python.html#bai-tâp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="giai_thua" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> GIAI_THUA<a href="lập-trình-với-ngôn-ngữ-python.html#giai_thua" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Viết hàm tìm Giai thừa của một số <code>n</code> theo công thức</p>
+<p><span class="math inline">\(n! = 1 \times 2 \times 3 \times .. \times (n-1) \times n\)</span></p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb86-1" tabindex="-1"></a><span class="kw">def</span> findGT(n):</span>
+<span id="cb86-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb86-2" tabindex="-1"></a>    ...</span>
+<span id="cb86-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb86-3" tabindex="-1"></a>    <span class="cf">return</span> _</span></code></pre></div>
+<p>Test case:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ví dụ</th>
+<th align="left">Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>findGT(5)</code></td>
+<td align="left">120</td>
+</tr>
+<tr class="even">
+<td align="left"><code>findGT(7)</code></td>
+<td align="left">5040</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lưu ý</strong>: không sử dụng hàm cho sẵn <code>math.factorial(n)</code></p>
+<details>
+<summary>
+<b>Lời giải</b>
+</summary>
+<p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb87-1" tabindex="-1"></a><span class="kw">def</span> findGT(n):</span>
+<span id="cb87-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb87-2" tabindex="-1"></a>    answer <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb87-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb87-3" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb87-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb87-4" tabindex="-1"></a>        answer <span class="op">*=</span> i</span>
+<span id="cb87-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb87-5" tabindex="-1"></a>    <span class="cf">return</span> answer</span></code></pre></div>
+</p>
+</details>
+<hr />
+</div>
+<div id="chia_cho_5" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> CHIA_CHO_5<a href="lập-trình-với-ngôn-ngữ-python.html#chia_cho_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Mô tả</strong></p>
+<p>Viết hàm tìm tất cả các số chia hết cho 5 nhưng không chia hết cho 15 nằm trong đoạn từ <code>[a, b]</code>. Kết quả trả về là một danh sách</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-1" tabindex="-1"></a><span class="kw">def</span> find(a, b):</span>
+<span id="cb88-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-2" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(__, __):</span>
+<span id="cb88-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-3" tabindex="-1"></a>        <span class="cf">if</span> __:</span>
+<span id="cb88-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-4" tabindex="-1"></a>            ..</span>
+<span id="cb88-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-5" tabindex="-1"></a>            ..</span>
+<span id="cb88-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-6" tabindex="-1"></a>        ..</span>
+<span id="cb88-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb88-7" tabindex="-1"></a>    <span class="cf">return</span> _</span></code></pre></div>
+<p><strong>Test case</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ví dụ</th>
+<th align="left">Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>find(1, 40)</code></td>
+<td align="left">[5, 10, 20, 25, 35, 40]</td>
+</tr>
+<tr class="even">
+<td align="left"><code>find(10, 100)</code></td>
+<td align="left">[10, 20, 25, 35, 40, 50, 55, 65, 70, 80, 85, 95, 100]</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+<b>Lời giải</b>
+</summary>
+<p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-1" tabindex="-1"></a><span class="kw">def</span> find(a, b):</span>
+<span id="cb89-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-2" tabindex="-1"></a>    answer <span class="op">=</span> []</span>
+<span id="cb89-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-3" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a, b <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb89-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-4" tabindex="-1"></a>        <span class="cf">if</span> (i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>) <span class="op">&amp;</span> (i <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>):</span>
+<span id="cb89-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-5" tabindex="-1"></a>            answer.append(i)</span>
+<span id="cb89-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb89-6" tabindex="-1"></a>    <span class="cf">return</span> answer</span></code></pre></div>
+</p>
+</details>
+<hr />
+</div>
+<div id="parse_string_01" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> PARSE_STRING_01<a href="lập-trình-với-ngôn-ngữ-python.html#parse_string_01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Mô tả</strong></p>
+<p>Viết một hàm nhận đầu vào là một danh sách các số nguyên dưới dạng chuỗi và đầu ra là một danh sách</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb90-1" tabindex="-1"></a><span class="kw">def</span> parseString(l):</span>
+<span id="cb90-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb90-2" tabindex="-1"></a>    ..</span>
+<span id="cb90-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb90-3" tabindex="-1"></a>    ..</span>
+<span id="cb90-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb90-4" tabindex="-1"></a>    <span class="cf">return</span></span></code></pre></div>
+<p><strong>Test case</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ví dụ</th>
+<th align="left">Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>parseString("[1, 2, 3, 4, 5]")</code></td>
+<td align="left">[1, 2, 3, 4, 5]</td>
+</tr>
+<tr class="even">
+<td align="left"><code>parseString("[-1, -2]")</code></td>
+<td align="left">[-1, -2]</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>parseString("[0]")</code></td>
+<td align="left">[0]</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+<b>Lời giải</b>
+</summary>
+<p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-1" tabindex="-1"></a><span class="kw">def</span> parseString(l):</span>
+<span id="cb91-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-2" tabindex="-1"></a>    items <span class="op">=</span> l.split(<span class="st">&#39;,&#39;</span>)</span>
+<span id="cb91-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-3" tabindex="-1"></a>    answer <span class="op">=</span> []</span>
+<span id="cb91-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-4" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
+<span id="cb91-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-5" tabindex="-1"></a>        item <span class="op">=</span> items[i].replace(<span class="st">&#39;[&#39;</span>,<span class="st">&#39;&#39;</span>).replace(<span class="st">&#39;]&#39;</span>,<span class="st">&#39;&#39;</span>).strip() </span>
+<span id="cb91-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-6" tabindex="-1"></a>        item <span class="op">=</span> <span class="bu">int</span>(item)</span>
+<span id="cb91-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-7" tabindex="-1"></a>        answer.append(item)</span>
+<span id="cb91-8"><a href="lập-trình-với-ngôn-ngữ-python.html#cb91-8" tabindex="-1"></a>    <span class="cf">return</span> answer</span></code></pre></div>
+</p>
+</details>
+<hr />
 
+</div>
 </div>
 </div>
             </section>
@@ -600,6 +739,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
