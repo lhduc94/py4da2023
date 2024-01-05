@@ -172,7 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.4" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#chia_cho_5"><i class="fa fa-check"></i><b>2.4.4</b> CHIA_CHO_5</a></li>
 <li class="chapter" data-level="2.4.5" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#parse_string_01"><i class="fa fa-check"></i><b>2.4.5</b> PARSE_STRING_01</a></li>
 <li class="chapter" data-level="2.4.6" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#atm"><i class="fa fa-check"></i><b>2.4.6</b> ATM</a></li>
-<li class="chapter" data-level="2.4.7" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_bieu_thuc"><i class="fa fa-check"></i><b>2.4.7</b> RUT_GON_BIEU_THUC</a></li>
+<li class="chapter" data-level="2.4.7" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_da_thuc_01"><i class="fa fa-check"></i><b>2.4.7</b> RUT_GON_DA_THUC_01</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -799,13 +799,87 @@ Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</c
 </p>
 </details>
 </div>
-<div id="rut_gon_bieu_thuc" class="section level3 hasAnchor" number="2.4.7">
-<h3><span class="header-section-number">2.4.7</span> RUT_GON_BIEU_THUC<a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_bieu_thuc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Viết một hàm nhận một đa thức bậc 2 và trả ra đa thức rút gọn</p>
-<p>Ví dụ:</p>
-<p>Input: “3x^2 + 2x + 2x^2”
-Output: “5x^2 + 2x”</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+<div id="rut_gon_da_thuc_01" class="section level3 hasAnchor" number="2.4.7">
+<h3><span class="header-section-number">2.4.7</span> RUT_GON_DA_THUC_01<a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_da_thuc_01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Viết một hàm nhận một đa thức và trả ra đa thức rút gọn sắp xếp theo trình tự giảm dần của bậc.
+<code>^</code> là kí hiệu cho dấu lũy thừa</p>
+<p>Ràng buộc:</p>
+<ul>
+<li>Các hệ số không âm, giữa các hệ số và <code>x</code> sẽ là dấu <code>*</code> đại diện cho dấu nhân</li>
+<li>phép tính giữa các đơn thức là phép <code>+</code></li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb98-1" tabindex="-1"></a><span class="kw">def</span> rut_gon_da_thuc(dathuc):</span>
+<span id="cb98-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb98-2" tabindex="-1"></a>    <span class="cf">return</span> __</span></code></pre></div>
+<p><strong>Test case</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ví dụ</th>
+<th align="left">Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>rut_gon_da_thuc("3*x^2 + 2*x + 2*x^2")</code></td>
+<td align="left">“5x^2 + 2x”</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rut_gon_da_thuc("2*x + 2*x^2 + 5*x + 3")</code></td>
+<td align="left">“2x^2 + 7x + 3</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>rut_gon_da_thuc("3*x^5 + 2*x + 2*x^5 + 4*x")</code></td>
+<td align="left">“5<em>x^5 + 6</em>x</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+<b>Lời giải</b>
+</summary>
+<p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-1" tabindex="-1"></a><span class="kw">def</span> rut_gon_da_thuc(da_thuc):</span>
+<span id="cb99-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-2" tabindex="-1"></a>    <span class="co"># Tách biệt các hạng tử</span></span>
+<span id="cb99-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-3" tabindex="-1"></a>    hts <span class="op">=</span> da_thuc.split(<span class="st">&quot; + &quot;</span>)</span>
+<span id="cb99-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-4" tabindex="-1"></a>    <span class="bu">print</span>(hts)</span>
+<span id="cb99-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-5" tabindex="-1"></a>    <span class="co"># Tạo một từ điển để lưu trữ số lượng và hạng tử</span></span>
+<span id="cb99-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-6" tabindex="-1"></a>    thong_ke <span class="op">=</span> {}</span>
+<span id="cb99-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-7" tabindex="-1"></a>    </span>
+<span id="cb99-8"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-8" tabindex="-1"></a>    <span class="cf">for</span> ht <span class="kw">in</span> hts:</span>
+<span id="cb99-9"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-9" tabindex="-1"></a>        <span class="bu">print</span>(ht)</span>
+<span id="cb99-10"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-10" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">&#39;*&#39;</span> <span class="kw">not</span> <span class="kw">in</span> ht:</span>
+<span id="cb99-11"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-11" tabindex="-1"></a>            he_so, bac <span class="op">=</span> ht, <span class="dv">0</span></span>
+<span id="cb99-12"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-12" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb99-13"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-13" tabindex="-1"></a>            he_so, bac <span class="op">=</span> ht.split(<span class="st">&quot;*x&quot;</span>)</span>
+<span id="cb99-14"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-14" tabindex="-1"></a>            <span class="bu">print</span>(he_so, bac)</span>
+<span id="cb99-15"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-15" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&quot;^&quot;</span> <span class="kw">in</span> bac:</span>
+<span id="cb99-16"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-16" tabindex="-1"></a>                bac <span class="op">=</span> <span class="bu">int</span>(bac.split(<span class="st">&quot;^&quot;</span>)[<span class="dv">1</span>])</span>
+<span id="cb99-17"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-17" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb99-18"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-18" tabindex="-1"></a>                bac <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb99-19"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-19" tabindex="-1"></a>        <span class="co"># Cập nhật số lượng và hạng tử trong từ điển</span></span>
+<span id="cb99-20"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-20" tabindex="-1"></a>        <span class="cf">if</span> bac <span class="kw">in</span> thong_ke:</span>
+<span id="cb99-21"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-21" tabindex="-1"></a>            thong_ke[bac] <span class="op">+=</span> <span class="bu">int</span>(he_so)</span>
+<span id="cb99-22"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-22" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb99-23"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-23" tabindex="-1"></a>            thong_ke[bac] <span class="op">=</span> <span class="bu">int</span>(he_so)</span>
+<span id="cb99-24"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-24" tabindex="-1"></a>    </span>
+<span id="cb99-25"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-25" tabindex="-1"></a>    <span class="bu">print</span>(thong_ke)</span>
+<span id="cb99-26"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-26" tabindex="-1"></a>    <span class="co"># Tạo đa thức đã rút gọn</span></span>
+<span id="cb99-27"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-27" tabindex="-1"></a>    da_thuc_rut_gon <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb99-28"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-28" tabindex="-1"></a>    <span class="cf">for</span> bac, he_so <span class="kw">in</span> <span class="bu">sorted</span>(thong_ke.items(), reverse<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb99-29"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-29" tabindex="-1"></a>        <span class="cf">if</span> he_so <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb99-30"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-30" tabindex="-1"></a>            <span class="cf">if</span> bac <span class="op">&gt;=</span><span class="dv">2</span> :</span>
+<span id="cb99-31"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-31" tabindex="-1"></a>                da_thuc_rut_gon <span class="op">+=</span> <span class="ss">f&quot;</span><span class="sc">{</span>he_so<span class="sc">}</span><span class="ss">*x^</span><span class="sc">{</span>bac<span class="sc">}</span><span class="ss"> + &quot;</span></span>
+<span id="cb99-32"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-32" tabindex="-1"></a>            <span class="cf">elif</span> bac <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb99-33"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-33" tabindex="-1"></a>                da_thuc_rut_gon <span class="op">+=</span> <span class="ss">f&quot;</span><span class="sc">{</span>he_so<span class="sc">}</span><span class="ss">*x + &quot;</span></span>
+<span id="cb99-34"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-34" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb99-35"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-35" tabindex="-1"></a>                da_thuc_rut_gon <span class="op">+=</span> <span class="bu">str</span>(he_so)</span>
+<span id="cb99-36"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-36" tabindex="-1"></a>    </span>
+<span id="cb99-37"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-37" tabindex="-1"></a>    <span class="co"># Loại bỏ dấu + cuối cùng</span></span>
+<span id="cb99-38"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-38" tabindex="-1"></a>    da_thuc_rut_gon <span class="op">=</span> da_thuc_rut_gon.rstrip(<span class="st">&quot; + &quot;</span>)</span>
+<span id="cb99-39"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-39" tabindex="-1"></a>    </span>
+<span id="cb99-40"><a href="lập-trình-với-ngôn-ngữ-python.html#cb99-40" tabindex="-1"></a>    <span class="cf">return</span> da_thuc_rut_gon</span></code></pre></div>
+</p>
+</details>
 
 </div>
 </div>

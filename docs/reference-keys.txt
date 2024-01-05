@@ -24,4 +24,4 @@ giai_thua
 chia_cho_5
 parse_string_01
 atm
-rut_gon_bieu_thuc
+rut_gon_da_thuc_01
