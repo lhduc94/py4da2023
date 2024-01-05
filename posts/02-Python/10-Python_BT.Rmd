@@ -2,74 +2,6 @@
 ## Bài tập
 
 
-### UCLN
-
-Viết hàm tìm Ước chung lớn nhất của hai số  nguyên dương `a`, `b`
-
-
-```python
-def findUCLN(a, b):
-    while b != 0:
-        temp = b
-        b = a % b
-        a = temp
-        # a, b = b, a % b
-    return a
-```
-
-
-Test case:
-
-|Ví dụ|Kết quả|
-|:--|:----------|
-|`findUCLN(50, 20)`|10|
-|`findUCLN(60, 520)`|20|
-
-**Lưu ý**: không sử dụng hàm cho sẵn `math.gcd(a, b)` 
-
-
-<details><summary><b>Lời giải</b></summary>
-<p>
-
-```python
-import math
-def findUCLN(a, b):
-    return math.gcd(a, b)
-```
-</p></details>
-
----
-
-
-### BCNN
-
-Viết hàm tìm Bội chung nhỏ nhất của hai số nguyên dương `a`, `b`
-
-```python
-def findBCNN(a, b):
-    ..
-    ..
-    return __
-```
-
-Test case:
-
-|Ví dụ|Kết quả|
-|:--|:----------|
-|`findBCNN(8, 6)`|24|
-|`findBCNN(30, 520)`|1560|
-
-**Lưu ý**: không sử dụng hàm cho sẵn `math.lcm(a, b)` 
-
-<details><summary><b>Lời giải</b></summary>
-<p>
-
-```python
-def findBCNN(a, b):
-    answer = a * b // findUCLN(a, b)
-    return answer
-```
-</p></details>
 
 ---
 
@@ -217,6 +149,78 @@ def ATM(money):
     return sum(answer)
 ```
 </p></details>
+
+---
+### UCLN
+
+Viết hàm tìm Ước chung lớn nhất của hai số  nguyên dương `a`, `b`
+
+
+```python
+def findUCLN(a, b):
+    while b != 0:
+        temp = b
+        b = a % b
+        a = temp
+        # a, b = b, a % b
+    return a
+```
+
+
+Test case:
+
+|Ví dụ|Kết quả|
+|:--|:----------|
+|`findUCLN(50, 20)`|10|
+|`findUCLN(60, 520)`|20|
+
+**Lưu ý**: không sử dụng hàm cho sẵn `math.gcd(a, b)` 
+
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+import math
+def findUCLN(a, b):
+    return math.gcd(a, b)
+```
+</p></details>
+
+---
+
+
+### BCNN
+
+Viết hàm tìm Bội chung nhỏ nhất của hai số nguyên dương `a`, `b`
+
+```python
+def findBCNN(a, b):
+    ..
+    ..
+    return __
+```
+
+Test case:
+
+|Ví dụ|Kết quả|
+|:--|:----------|
+|`findBCNN(8, 6)`|24|
+|`findBCNN(30, 520)`|1560|
+
+**Lưu ý**: không sử dụng hàm cho sẵn `math.lcm(a, b)` 
+
+<details><summary><b>Lời giải</b></summary>
+<p>
+
+```python
+def findBCNN(a, b):
+    answer = a * b // findUCLN(a, b)
+    return answer
+```
+</p></details>
+
+---
 
 ### RUT_GON_DA_THUC_01
 
