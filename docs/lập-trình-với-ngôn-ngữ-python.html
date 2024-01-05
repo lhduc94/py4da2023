@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023</title>
   <meta name="description" content="Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chương 2 Lập trình với ngôn ngữ Python | Python for Data Analyst 2023" />
   <meta property="og:type" content="book" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -171,6 +171,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.3" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#giai_thua"><i class="fa fa-check"></i><b>2.4.3</b> GIAI_THUA</a></li>
 <li class="chapter" data-level="2.4.4" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#chia_cho_5"><i class="fa fa-check"></i><b>2.4.4</b> CHIA_CHO_5</a></li>
 <li class="chapter" data-level="2.4.5" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#parse_string_01"><i class="fa fa-check"></i><b>2.4.5</b> PARSE_STRING_01</a></li>
+<li class="chapter" data-level="2.4.6" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#atm"><i class="fa fa-check"></i><b>2.4.6</b> ATM</a></li>
+<li class="chapter" data-level="2.4.7" data-path="lập-trình-với-ngôn-ngữ-python.html"><a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_bieu_thuc"><i class="fa fa-check"></i><b>2.4.7</b> RUT_GON_BIEU_THUC</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -752,6 +754,70 @@ ValueError: invalid literal for int() with base 10: &#39;2.5&#39;</code></pre>
 <span id="cb95-8"><a href="lập-trình-với-ngôn-ngữ-python.html#cb95-8" tabindex="-1"></a>    <span class="cf">return</span> answer</span></code></pre></div>
 </p>
 </details>
+</div>
+<div id="atm" class="section level3 hasAnchor" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> ATM<a href="lập-trình-với-ngôn-ngữ-python.html#atm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Giả sử bạn đang code thuật toán cho máy ATM với một số tiền vô hạn.
+ATM có các đồng tiền với mệnh giá 50 20 10 5 2 1.
+Yêu cầu viết thuật toán nhận lệnh số tiền <code>money</code> và trả ra số tờ tiền ít nhất</p>
+<p>Ví dụ 1
+Input : money=100
+Output: 2
+Giải thích: 100 chỉ cần 2 tờ mệnh giá 50</p>
+<p>Ví dụ 2:
+Input: money=121
+Output: 4
+Giải thích: 121 = 50 * 2 + 20 * 1 + 1 *1</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-1" tabindex="-1"></a><span class="kw">def</span> ATM(money):</span>
+<span id="cb96-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-2" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb96-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-3" tabindex="-1"></a>    ..</span>
+<span id="cb96-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-4" tabindex="-1"></a>    ..</span>
+<span id="cb96-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb96-5" tabindex="-1"></a>    <span class="cf">return</span> __</span></code></pre></div>
+<p><strong>Test case</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ví dụ</th>
+<th align="left">Kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>parseString(money)</code></td>
+<td align="left">“2, chỉ cần 2 tờ mệnh giá 50”</td>
+</tr>
+<tr class="even">
+<td align="left"><code>parseString("[-1, -2]")</code></td>
+<td align="left">[-1, -2]</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>parseString("[0]")</code></td>
+<td align="left">[0]</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+<b>Lời giải</b>
+</summary>
+<p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-1" tabindex="-1"></a><span class="kw">def</span> ATM(money):</span>
+<span id="cb97-2"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-2" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb97-3"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-3" tabindex="-1"></a>    answer <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb97-4"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-4" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(l)):</span>
+<span id="cb97-5"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-5" tabindex="-1"></a>        answer[i] <span class="op">=</span> money <span class="op">//</span> l[i]</span>
+<span id="cb97-6"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-6" tabindex="-1"></a>        money <span class="op">=</span> money <span class="op">%</span> l[i]</span>
+<span id="cb97-7"><a href="lập-trình-với-ngôn-ngữ-python.html#cb97-7" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(answer)</span></code></pre></div>
+</p>
+</details>
+</div>
+<div id="rut_gon_bieu_thuc" class="section level3 hasAnchor" number="2.4.7">
+<h3><span class="header-section-number">2.4.7</span> RUT_GON_BIEU_THUC<a href="lập-trình-với-ngôn-ngữ-python.html#rut_gon_bieu_thuc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Viết một hàm nhận một đa thức bậc 2 và trả ra đa thức rút gọn</p>
+<p>Ví dụ:</p>
+<p>Input: “3x^2 + 2x + 2x^2”
+Output: “5x^2 + 2x”</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
 
 </div>
 </div>
