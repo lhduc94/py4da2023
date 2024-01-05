@@ -638,6 +638,9 @@ print(type(c))
 
 ## Bài tập
 
+abc 
+
+
 ### GIAI_THUA
 
 Viết hàm tìm Giai thừa của một số `n` theo công thức
