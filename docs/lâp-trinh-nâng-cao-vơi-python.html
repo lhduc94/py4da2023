@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023</title>
-  <meta name="description" content="Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023" />
+  <title>Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023</title>
+  <meta name="description" content="Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023" />
+  <meta property="og:title" content="Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023" />
+  <meta property="og:description" content="Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023" />
+  <meta name="twitter:title" content="Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023" />
   
-  <meta name="twitter:description" content="Chương 1 Giới thiệu Python và các công cụ hỗ trợ | Python for Data Analyst 2023" />
+  <meta name="twitter:description" content="Chương 3 Lập trình nâng cao với Python | Python for Data Analyst 2023" />
   
 
 <meta name="author" content="Lê Huỳnh Đức" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="lập-trình-cơ-ban-với-ngôn-ngữ-python.html"/>
+<link rel="prev" href="lập-trình-cơ-ban-với-ngôn-ngữ-python.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,17 +213,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="giơi-thiêu-python-va-cac-công-cu-hô-trơ" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chương 1</span> Giới thiệu Python và các công cụ hỗ trợ<a href="giơi-thiêu-python-va-cac-công-cu-hô-trơ.html#giơi-thiêu-python-va-cac-công-cu-hô-trơ" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="lâp-trinh-nâng-cao-vơi-python" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chương 3</span> Lập trình nâng cao với Python<a href="lâp-trinh-nâng-cao-vơi-python.html#lâp-trinh-nâng-cao-vơi-python" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
+<div id="đọc-và-ghi-dữ-liệu-vào-tệp-bằng-python" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Đọc và ghi dữ liệu vào tệp bằng Python<a href="lâp-trinh-nâng-cao-vơi-python.html#đọc-và-ghi-dữ-liệu-vào-tệp-bằng-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Sử dụng hàm open để mở file</li>
+<li>close sau đã thao tác xong với file</li>
+<li>Cần close file để giải phóng tài nguyên, lưu thay đổi, cho phép các chương khác thao tác với file</li>
+</ul>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb144-1"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb144-1" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;my_file.txt&#39;</span>)</span>
+<span id="cb144-2"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb144-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">file</span>.read())</span>
+<span id="cb144-3"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb144-3" tabindex="-1"></a><span class="bu">file</span>.close()</span></code></pre></div>
+<pre class="python_output"><code>This is a test
+Second line</code></pre>
+<p>Sử dụng with open để đảm bảo file tự động đóng được khi chạy xong code trong with</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb146-1"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb146-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;my_file.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb146-2"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb146-2" tabindex="-1"></a>    <span class="bu">print</span>(f.read())</span></code></pre></div>
+<pre class="python_output"><code>This is a test
+Second line</code></pre>
+<p>Để ngắt kết quả theo từng dòng, chúng ta có thể split chuỗi theo kí tự ‘’ là kí tự xuống dòng</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb148-1"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb148-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;my_file.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb148-2"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb148-2" tabindex="-1"></a>    l <span class="op">=</span> f.read()</span>
+<span id="cb148-3"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb148-3" tabindex="-1"></a><span class="bu">print</span>(l)</span>
+<span id="cb148-4"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb148-4" tabindex="-1"></a>l <span class="op">=</span> l.split(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb148-5"><a href="lâp-trinh-nâng-cao-vơi-python.html#cb148-5" tabindex="-1"></a><span class="bu">print</span>(l)</span></code></pre></div>
+<pre class="python_output"><code>This is a test
+Second line
+[&#39;This is a test&#39;, &#39;Second line&#39;]</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lập-trình-cơ-ban-với-ngôn-ngữ-python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lập-trình-cơ-ban-với-ngôn-ngữ-python.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

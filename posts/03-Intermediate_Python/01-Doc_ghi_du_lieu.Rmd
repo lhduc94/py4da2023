@@ -1,0 +1,44 @@
+## Đọc và ghi dữ liệu vào tệp bằng Python
+
+- Sử dụng hàm open để mở file
+- close sau đã thao tác xong với file
+- Cần close file để giải phóng tài nguyên, lưu thay đổi, cho phép các chương khác thao tác với file  
+
+```python
+file = open('my_file.txt')
+print(file.read())
+file.close()
+```
+
+```{.python_output}
+This is a test
+Second line
+```
+
+Sử dụng with open để đảm bảo file tự động đóng được khi chạy xong code trong with
+
+```python
+with open('my_file.txt', 'r') as f:
+    print(f.read())
+```
+
+```{.python_output}
+This is a test
+Second line
+```
+
+Để ngắt kết quả theo từng dòng, chúng ta có thể split chuỗi theo kí tự '\n' là kí tự xuống dòng
+
+```python
+with open('my_file.txt', 'r') as f:
+    l = f.read()
+print(l)
+l = l.split('\n')
+print(l)
+```
+
+```{.python_output}
+This is a test
+Second line
+['This is a test', 'Second line']
+```

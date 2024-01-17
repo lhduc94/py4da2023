@@ -245,7 +245,7 @@ Lưu ý: Python index bắt đầu từ 0, nhưng trong toán học sẽ b�
 - Ví dụ để tính căn bậc 3 của 2 ta dùng `pow(2, 1/3)`
 
 ```python
-def calculate_geometric_mean(Y)
+def calculate_geometric_mean(Y):
     answer = 1
     n = __
     for i in range(__):

@@ -1,5 +1,5 @@
 giơi-thiêu-python-va-cac-công-cu-hô-trơ
-lập-trình-với-ngôn-ngữ-python
+lập-trình-cơ-ban-với-ngôn-ngữ-python
 khai-báo-biến
 biến-là-gì
 tại-sao-phải-cần-khai-báo-biến
@@ -42,3 +42,5 @@ cong_thuc_02
 ucln
 bcnn
 rut_gon_da_thuc_01
+lâp-trinh-nâng-cao-vơi-python
+đọc-và-ghi-dữ-liệu-vào-tệp-bằng-python
